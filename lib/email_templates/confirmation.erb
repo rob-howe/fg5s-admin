@@ -1,0 +1,101 @@
+<html>
+<head><title>Application Confirmation</title></head>
+<body>
+<img src="http://www.thefg5s.co.uk/images/fg5s-small-logo.png"/>
+<p><div style="font-size:30px;color:#00008b;"><strong>The Forest Glade Fives <%=$year%></strong></div></p>
+<br/>
+<p><h1>Thank you for your application.</h1></p>
+<p>The details you provided are as follows;</p>
+<table style="margin-left: 20px;">
+    <tbody>
+    <tr class="prop">
+      <td valign="top" class="name"><strong>Age Group</strong></td>
+      <td valign="top" ><%=age_group.description%> - Playing on: <%=age_group.day%></td>
+    </tr>
+    <tr>
+      <td valign="top" class="name"><strong>Team Name</strong></td>
+      <td valign="top" ><%=fives_team.team_name%> <%=fives_team.team_designation%></td>
+    </tr>
+    <tr class="prop">
+      <td valign="top" class="name"><strong>Manager Name</strong></td>
+      <td valign="top"><%=fives_team.manager_name%></td>
+      <td colspan="2"></td>
+    </tr>
+
+    <tr class="prop">
+      <td valign="top" class="name"><strong>Home Phone</strong></td>
+
+            <td valign="top" ><%=fives_team.home_phone%></td>
+
+        </tr>
+        <tr class="prop">
+            <td valign="top" class="name"><strong>Mobile Phone</strong></td>
+
+            <td valign="top"><%=fives_team.mobile_phone%></td>
+
+        </tr>
+
+    <tr class="prop">
+      <td valign="top" class="name"><strong>Address</strong></td>
+
+    <td valign="top" ><%=fives_team.address_line1%></td>
+
+    </tr>
+    <tr class="prop">
+    <td valign="top" class="name"></td>
+
+    <td valign="top" ><%=fives_team.address_line2%></td>
+
+    </tr>
+    <tr class="prop">
+    <td valign="top" class="name"></td>
+
+    <td valign="top" ><%=fives_team.address_town%></td>
+
+    </tr>
+    <tr class="prop">
+        <td valign="top" class="name"></td>
+
+        <td valign="top" ><%=fives_team.address_county%></td>
+
+    </tr>
+    <tr class="prop">
+    <td valign="top" class="name"><strong>Postcode</strong></td>
+
+    <td valign="top" ><%=fives_team.address_postcode%></td>
+     </tr>
+    <tr>
+      <td colspan="4">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="4">Your application reference id is <strong><%=fives_team.ref_id%></strong>.</td>
+    </tr>
+    </tbody>
+    </table>
+
+<p>If any of the above details are incorrect please email fg5s@forestgladefc.co.uk with any alterations you wish to make.</p>
+<br/>
+<% if discount_applicable %>
+      <p>The entry fee is &pound;40 per team. There is a &pound;5 <strong>discount</strong> for teams registered before the 31st March <%=$year%>.</p>
+      <p>As the discount is applicable your entry fee is &pound;35.00, please make your cheque out for this amount.</p>
+<% else %>
+        <p>The entry fee is &pound;40 per team, please make your cheque out for this amount.</p>
+<% end %>
+<br/>
+<p>All cheques should be made payable to Forest Glade FC.</p>
+<br/>
+<table>
+  <tr>
+    <td style="vertical-align:text-top;"><strong>Please send cheques to:</strong></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td>Lee Ashley<br/>3 Grennan Close<br/>Ingrave<br/>Brentwood<br/>Essex<br/>CM13 3YD</td>
+  </tr>
+  </table>
+<p>Please quote your reference id  <strong><%=fives_team.ref_id%></strong> on all correspondence.</p>
+  <br/>
+  Thank You.
+  <br/>
+  <br/>
+  The Forest Glade Fives - <%=$year%>   <a href="http://www.thefg5s.co.uk">www.theFG5s.co.uk</a>
+</body>
+</html>

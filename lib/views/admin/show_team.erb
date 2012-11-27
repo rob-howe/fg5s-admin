@@ -1,0 +1,114 @@
+<div class="nav">
+    <form action="/admin/edit" method="post">
+        <input type="hidden" name="id" value="<%= @fives_team.id %>"/>
+        <span class="button"><input type="submit" class="save" value="Edit"/></span>
+    </form>
+</div>
+<div class="body">
+    <h1>Fives Team</h1>
+
+    <div class="dialog">
+        <table>
+            <tbody>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Reference Id</strong></td>
+
+                <td valign="top" class="value"><%= @fives_team.ref_id %></td>
+
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Age Group</strong></td>
+
+                <td valign="top" class="value"><%= @age_group.description %></td>
+
+            </tr>
+
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Team Name</strong></td>
+
+                <td valign="top" class="value"><%= @fives_team.team_name %></td>
+
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Team Designation</strong></td>
+
+                <td valign="top" class="value"><%= @fives_team.team_designation %></td>
+
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Paid</strong></td>
+
+                <td valign="top" class="value"><%= @fives_team.paid %></td>
+
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>PayPal</strong></td>
+
+                <td valign="top" class="value"><%= @fives_team.paypal %></td>
+
+            </tr>
+
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Manager Name</strong></td>
+
+                <td valign="top" class="value"><%= @fives_team.manager_name %></td>
+
+            </tr>
+
+
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Home Phone</strong></td>
+
+                <td valign="top" class="value"><%= @fives_team.home_phone %></td>
+
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Mobile Phone</strong></td>
+
+                <td valign="top" class="value"><%= @fives_team.mobile_phone %></td>
+
+            </tr>
+
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Email Address</strong></td>
+
+                <td valign="top" class="value"><%= @fives_team.email_address %></td>
+
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Address</strong></td>
+
+                <td valign="top" class="value"><%= @fives_team.address_line1 %></td>
+
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"></td>
+
+                <td valign="top" class="value"><%= @fives_team.address_line2 %></td>
+
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"></td>
+
+                <td valign="top" class="value"><%= @fives_team.address_town %></td>
+
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"></td>
+
+                <td valign="top" class="value"><%= @fives_team.address_county %></td>
+
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Postcode</strong></td>
+
+                <td valign="top" class="value"><%= @fives_team.address_postcode %></td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,534 @@
+body {
+    font-size: 0.85em; /*font-family:  Georgia, serif;*/
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    background-color: #ccccff;
+    padding-top: 20px;
+}
+
+#content_wrapper {
+    background-color: white;
+    min-width: 956px;
+    min-height: 600px;
+    text-align: left;
+    /*overflow:auto;*/
+}
+
+#header-X {
+    background-color: #000066;
+    border-radius: 5px;
+}
+
+#small_page_heading {
+    background-image: url(/images/Header-Alternative.png);
+    background-repeat: no-repeat;
+    background-position: -0 -20px;
+    height: 50px;
+    width: 410px;
+    /*padding-top:90px;*/
+}
+
+#top_frame {
+    padding-bottom: 5px;
+    padding-right: 2px;
+    padding-top: 3px;
+    /*text-align:right;*/
+    /*margin-right:13px;*/
+    margin-left: 5px;
+    /*margin-right:5px;*/
+    border-bottom: solid #ccc 1px;
+    /*overflow:auto;*/
+}
+
+#pictures, #welcome-div {
+    background-image: url(/images/gray-small-background.png);
+    background-repeat: repeat-x;
+    border: 1px solid #cccccc;
+}
+
+#team_header {
+    margin: 10px;
+    width: 98%;
+    background-color: #dfdcdc;
+}
+
+#squad {
+    /*margin-left:25px;*/
+    padding: 5px;
+    padding-left: 50px;
+    float: left;
+    width: 142px;
+    margin: 2px;
+}
+
+#league_table, #team-photo {
+    padding: 5px;
+    padding-top: 15px;
+    float: left;
+    width: 305px;
+    margin: 2px;
+    background-color: #dfdcdc;
+    /*border:1px solid #ffffff;*/
+}
+
+.bold_blue_large {
+    font-size: 2.5em;
+    font-family: Georgia, serif;
+    color: #000099;
+    padding-bottom: 30px;
+}
+
+.bold_red {
+    font-size: 1.3em;
+    font-family: Georgia, serif;
+    color: #cc0000;
+    padding-bottom: 30px;
+}
+
+.bold_blue, #team-mngt th {
+    font-size: 1.3em;
+    font-family: Georgia, serif;
+    color: #000066;
+}
+
+.bold_blue_small, #code_conduct a {
+    font-size: 1.05em;
+    font-family: Georgia, serif;
+    color: #000066;
+}
+
+.bold_blue_medium, #code_conduct a {
+    font-size: 1.15em;
+    font-family: Georgia, serif;
+    color: #000066;
+}
+
+.bold_black, #team-mngt td {
+    font-size: 1.3em;
+    font-family: Georgia, serif;
+    color: #333333;
+}
+
+.white_background {
+    background-color: white;
+}
+
+#team-photo {
+    float: left;
+    padding-top: 20px;
+    padding-left: 30px;
+    background-color: #dfdcdc;
+}
+
+.photo {
+    padding: 2px;
+    border: 1px solid #000099;
+    margin: 5px;
+}
+
+#history {
+    padding: 2px;
+    margin-right: 20px;
+    margin-top: 20px;
+    border: 1px solid #000099;
+}
+
+#fgfc_map {
+    padding-top: 10px;
+    float: right;
+    margin-right: 20px;
+    /*background-color: #dfdcdc;*/
+}
+
+#team-sponsor {
+    padding-top: 10px;
+    padding-left: 10px;
+    float: left;
+    width: 300px;
+}
+
+#fixtures {
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
+    float: left;
+    width: 640px;
+}
+
+#headlines {
+    /*background-image: url( /images/blue_gradient_background.png );*/
+    /*background-repeat: repeat-x;*/
+    padding-top: 2px;
+    padding-left: 5px;
+    margin-top: 5px;
+    margin-right: 10px;
+    color: #0000cc;
+    height: 30px;
+    width: 100%; /*font-size: 1.8em;*/
+    /*font-weight: 200;*/
+}
+
+.news-item {
+    /*border-top: 1px solid #cccccc;*/
+    /*border-bottom: 1px solid #E0FF40;*/
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2px;
+}
+
+p {
+    margin: 4px;
+}
+
+p, li {
+    font-size: 0.95em;
+    text-align: left;
+    color: #444444;
+}
+
+p.small-text-right {
+    font-size: 0.65em;
+    text-align: right;
+    margin-right: 5px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+#about p {
+    margin: 4px;
+    font-size: 0.95em;
+    text-align: left;
+    color: #333333;
+    padding-bottom: 10px;
+}
+
+#pictures {
+    padding: 10px;
+}
+
+#welcome-div {
+    /*font-variant: small-caps;*/
+    /*font-weight: bold;*/
+    /*text-align:left;*/
+    color: blue;
+    font-size: .95em;
+    font-style: italic;
+    vertical-align: text-top;
+
+}
+
+.action-image {
+    border: 1px solid #3333ff;
+    padding: 2px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.team_photo {
+    border: 1px solid #3333ff;
+    padding: 2px;
+    margin-top: 5px;
+    /*height: 200px;*/
+    /*width: 280px; *//*float:right;*/
+}
+
+.fgfc_map {
+    border: 1px solid #3333ff;
+    padding: 2px;
+    margin-top: 10px;
+    height: 320px;
+    width: 520px; /*float:right;*/
+}
+
+.banner {
+    border: 1px solid #3333ff;
+    padding: 2px;
+    margin-top: 10px;
+    height: 150px;
+    margin: 15px;
+}
+
+.team_picture {
+    border: 1px solid #3333ff;
+    padding: 2px;
+    /*margin-top: 25px;*/
+    height: 280px;
+    width: 400px; /*float:right;*/
+}
+
+#nav {
+    line-height: 1.4em;
+    text-align: left;
+}
+
+#nav, #nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    list-style-position: outside;
+    position: relative;
+
+}
+
+#nav a {
+    display: block;
+    padding: 0 5px;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    color: white;
+    text-decoration: none;
+    background-color: #999999; /*background-image: url(/images/menu1.png);*/
+}
+
+#nav a:hover {
+    border-left: 1px solid white;
+    /*border-bottom:1px solid white;*/
+}
+
+#nav li {
+    float: left;
+    position: relative;
+    z-index: 999;
+}
+
+#nav ul {
+    position: absolute;
+    display: none;
+    width: 7em;
+    top: 1.5em;
+}
+
+#nav li ul a {
+    width: 7em;
+    height: auto;
+    float: left;
+    line-height: 1.4em;
+}
+
+#nav li ul li ul a {
+    width: 5em;
+    height: auto;
+    float: left;
+}
+
+#nav li ul li ul li ul a {
+    width: 7em;
+    height: auto;
+    float: left;
+}
+
+#nav ul ul {
+    top: auto;
+}
+
+#nav li ul ul {
+    left: 7em;
+    margin: 0 0 0 11px;
+}
+
+#nav li ul ul ul {
+    left: 5em;
+    margin: 0 0 0 11px;
+}
+
+.img_right {
+    padding-top: 5px; /*padding-left:2px;*/
+    float: right; /*vertical-align:top;*/
+}
+
+#nav li:hover ul ul, #nav li:hover ul ul ul, #nav li:hover ul ul ul ul {
+    display: none;
+}
+
+#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li li li li:hover ul {
+    display: block;
+}
+
+.sampleAnchors {
+    font-size: 1.2em;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 1px;
+}
+
+.sampleAnchors:after {
+    display: block;
+    clear: both;
+    content: " ";
+}
+
+.sampleAnchors a {
+    display: block;
+    position: relative;
+    top: 1px;
+    border: 1px solid #ccc; /*border-top: 1px solid white;*/
+    background: #e3e3e3;
+    border-bottom: 1px solid #cccccc;
+    z-index: 2;
+    padding: 6px 9px 5px;
+    color: #999999;
+    text-decoration: none;
+}
+
+.sampleAnchors a {
+    background: #cccccc;
+}
+
+.sampleAnchors a:focus, .sampleAnchors a:active {
+    outline: none;
+}
+
+.sampleAnchors a {
+    display: block;
+}
+
+.sampleAnchors li {
+    float: left;
+    margin: 0 1px 0 0;
+}
+
+.sampleAnchors a:hover, .sampleAnchors a:focus, .sampleAnchors a:active {
+    background: #fff;
+    border-bottom: 1px solid #cccccc;
+}
+
+.sampleAnchors a {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/
+/
+.tabs-selected a {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    border-bottom: 1px solid red; /*border-bottom: 0;*/
+    margin-bottom: -1px;
+    overflow: visible
+}
+
+.tabContent {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    clear: left;
+    background-color: #fff;
+    margin: 0;
+    height: 1%;
+}
+
+.sampleTabContent {
+    z-index: 1;
+    padding: 10px 25px;
+    clear: left;
+    background-color: #fff;
+    margin: 0;
+    border: 1px solid #cccccc;
+    min-height: 200px;
+    height: 1%;
+    float: left;
+    width: 92%;
+    position: relative;
+    top: -1px;
+}
+
+.sampleTabContent p {
+    clear: left;
+}
+
+.tabs-hide {
+    display: none;
+    background-color: #fff
+}
+
+.sample-tab-selected a, .sample-tab-selected a:focus, .sample-tab-selected a:active {
+    font-size: 1.21em;
+    font-weight: bold;
+    background-color: #fff;
+    color: #003399;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #cccccc;
+    margin-bottom: -1px;
+    overflow: visible
+}
+
+#fgfc_menu {
+    width: 100%;
+    background-color: #999999;
+    height: 1.4em;
+    border-top: #ffff66 1px solid;
+    border-bottom: #ffffff 1px solid;
+}
+
+div #left-nav {
+    float: left;
+    width: 190px;
+    background: #fff3f3;
+    margin: 3px 10px 5px 0;;
+    padding: 1px 0 5px 3px;
+    /*height:100%;*/
+    overflow: auto;
+}
+
+div #content {
+    float: left;
+    width: 700px;;
+    background-color: white;
+}
+
+#footer {
+    border-top: 1px solid #cccccc;
+    background: #000066;
+    color: white;
+    clear: both;
+    width: 100%;
+    border-bottom: 1px solid #0000FF;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.required {
+    color: red;
+    font-size: 11px;
+    text-align: right;
+    /*padding-right:5px;*/
+    vertical-align: bottom;
+}
+
+.tooltip {
+    background: url("/images/questionmark.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 16px;
+    position: relative;
+    text-decoration: none !important;
+    top: 1px;
+    width: 16px;
+    z-index: 100;
+}
+
+.number {
+    text-align: right;
+    padding-right: 30px;
+}
+
+.left {
+    float: left;
+}
+
+#de-photo-list {
+    padding-top: 30px;
+    padding-left: 40px;
+
+}
+
+#de-photo-list a {
+    color: blue;
+}
+
+#de-photo-list .current-year {
+    font-size: 20px;
+    /*font-weight:bold;*/
+    padding-bottom: 12px;
+}

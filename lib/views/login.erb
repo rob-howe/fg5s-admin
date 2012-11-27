@@ -1,0 +1,37 @@
+<form action="authenticate" method="post">
+    <div style="width:250px;">
+        <% if @message %>
+            <div><%= @message %></div>
+        <% end %>
+        <div class="dialog">
+            <table>
+                <tbody>
+                <tr class="prop">
+                    <td class="name">
+                        <label for="login">Login:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="login" name="login"/>
+                    </td>
+                </tr>
+
+                <tr class="prop">
+                    <td class="name">
+                        <label for="password">Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" id="password" name="password"/>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="nav">
+            <div class="button">
+                <input class="save" type="submit" value="login"/>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+</form>
+

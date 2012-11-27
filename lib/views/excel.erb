@@ -1,0 +1,82 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="application/vnd.ms-excel; charset=UTF-8" />
+    <title>FG5's - All Team Summary</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td colspan="13"></td>
+    </tr>
+    <thead>
+    <tr>
+        <td colspan="13"><h3>Forest Glade Fives - <%= $year %></h3></td>
+        <td colspan="2"><h3><%= Time.now %></h3></td>
+    </tr>
+    <tr>
+        <td style="background-color:blue;color:white;font-weight:bold;">Age Group</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">Reference</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">Team Name</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">Designation</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">Manager Name</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">Home Phone</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">Mobile Phone</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">Email Address</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">Paid</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">PayPal</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">Address</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">&nbsp;</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">&nbsp;</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">&nbsp;</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">Postcode</td>
+    </tr>
+    </thead>
+    <tbody>
+    <% age_group = '' %>
+    <% display_age_group = '' %>
+    <% @fives_teams.each do |team| %>
+        <% if age_group == team.age_group.description %>
+            <% display_age_group='&nbsp;' %>
+        <% else %>
+            <tr>
+                <td colspan="15">&nbsp;</td>
+            </tr>
+            <% age_group = team.age_group.description %>
+            <% display_age_group = team.age_group.description %>
+        <% end %>
+            <tr>
+                <td><%= display_age_group %></td>
+                <td><%= team.ref_id %></td>
+                <td><%= team.team_name %></td>
+                <td><%= team.team_designation %><%='&nbsp;' if team.team_designation.empty? %></td>
+                <td><%= team.manager_name %></td>
+                <td><%= team.home_phone %><%='&nbsp;' if team.home_phone.empty? %></td>
+                <td><%= team.mobile_phone %></td>
+                <td><%= team.email_address %></td>
+                <% if team.paid %>
+                    <td style="background-color:#7fff00;text-align:center;">
+                        yes
+                    </td>
+                <% else %>
+                    <td style="background-color:red;color:white;text-align:center;">
+                        no
+                    </td>
+                <% end %>
+                <td>
+                    <% if team.paypal %>
+                        yes
+                    <% else %>
+                        no
+                    <% end %>
+                </td>
+                <td><%= team.address_line1 %><%='&nbsp;' if team.address_line1.empty? %></td>
+                <td><%= team.address_line2 %><%='&nbsp;' if team.address_line2.empty? %></td>
+                <td><%= team.address_town %><%='&nbsp;' if team.address_town.empty? %></td>
+                <td><%= team.address_county %><%='&nbsp;' if team.address_county.empty? %></td>
+                <td><%= team.address_postcode %><%='&nbsp;' if team.address_postcode.empty? %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+</body>
+</html>

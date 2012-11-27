@@ -1,0 +1,38 @@
+<div class="body">
+    <h1>Age Group - <%= @age_group.description %></h1>
+
+    <div class="list">
+        <table>
+            <thead>
+            <tr>
+                <th>Reference</th>
+                <th>Age Group</th>
+                <th>Team Name</th>
+                <th>Designation</th>
+                <th>Manager Name</th>
+                <th>Home Phone</th>
+                <th>mobile Phone</th>
+                <th>Paid</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @fives_teams.each_with_index do |team, index| %>
+                <tr class="
+                    <% (index % 2) == 0 ? 'odd' : 'even' %>">
+                    <td><a href="/admin/find?ref_id=<%= team.id %>" id="team_<%= team.id %>"><%= team.ref_id %></a></td>
+                    <td><%= @age_group.description %></td>
+                    <td><%= team.team_name %></td>
+                    <td><%= team.team_designation %></td>
+                    <td><%= team.manager_name %></td>
+                    <td><%= team.home_phone %></td>
+                    <td><%= team.mobile_phone %></td>
+                    <td><%= team.paid %></td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginateButtons">
+
+    </div>
+</div>

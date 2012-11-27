@@ -1,0 +1,137 @@
+<div id="pageBody">
+  <h1>Add New Team for the FG5's <%=$year%></h1>
+  <div class="dialog">
+    <p>The team manager will not be emailed adding a team via administration.</p>
+    <p> Plus all validation is turned off apart from the 'Required' fields.</p>
+    <br/>
+  </div>
+  <% if @has_errors %>
+    <div class="errors">
+      <ul><li>The fields high lighted in red below are required please provide the information requested.</li></ul>
+    </div>
+  <% end %>
+  <form action="/admin/save" method="post">
+    <div class="dialog">
+      <table>
+        <tbody>
+        <tr class="prop">
+          <td colspan="2" class="name">
+                       <h3>Team Details</h3>
+          </td>
+          <td colspan="2">Fields marked with an <span class="required">*</span> are required.</td>
+        </tr>
+        <tr class="prop">
+                        <td valign="top" class="name">
+                            <label for="ageGroup.id">Age Group</label><span class="required"> *</span>
+                        </td>
+                        <td id="ageGroupCell" valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'ageGroup', 'errors')}">
+                            <select id="ageGroup" name="age_group_id">
+                                <option value="">Please select</option>
+                                <% @age_groups.each do |age_group| %>
+                                    <option value="<%= age_group.id %>"><%= age_group.description %></option>
+                                <% end %>
+                            </select>
+
+                            <span class="tooltip" title="The age group for your team as of the 2010/2011 football season."></span>
+                        </td>
+                    </tr>
+        <tr class="prop">
+          <td valign="top" class="name">
+            <label for="teamName">Team Name</label><span class="required"> *</span>
+          </td>
+          <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'teamName', 'errors')}">
+            <input type="text" name="team_name" value="<%=@fives_team.team_name if @fives_team %>" size="30" tabindex="2"/>
+          </td>
+          <td valign="top" class="name">
+            <label for="teamDesignation">Designation</label>
+          </td>
+          <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'teamDesignation', 'errors')}">
+            <input type="text" name="team_designation" value="<%=@fives_team.team_designation if @fives_team %>" tabindex="3"/>
+            <span class="tooltip" title="Used to identify several teams from one club in the same age group, examples are 'Lions', 'Tigers', 'A', 'Red', 'Blue', 'Volcanos'...etc, it can however be anything you like."></span>
+          </td>
+        </tr>
+
+        <tr class="prop">
+          <td colspan="4" class="name">
+                       <h3>Manager/Contact Details</h3>
+          </td>
+        </tr>
+
+        <tr class="prop">
+          <td valign="top" class="name">
+            <label for="managerName">Name</label><span class="required"> *</span>
+          </td>
+          <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'managerName', 'errors')}">
+            <input type="text" name="manager_name" value="<%=@fives_team.manager_name if @fives_team %>"  size="30" tabindex="4"/>
+          </td>
+          <td valign="top" class="name">
+            <label for="addressLine1">Address</label>
+          </td>
+          <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'addressLine1', 'errors')}">
+            <input type="text" name="address_line1" value="<%=@fives_team.address_line1 if @fives_team %>" size="30" tabindex="8"/>
+          </td>
+        </tr>
+
+        <tr class="prop">
+          <td valign="top" class="name">
+            <label for="homePhone">Home Phone</label>
+          </td>
+          <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'homePhone','errors')}">
+            <input type="text" name="home_phone" value="<%=@fives_team.home_phone if @fives_team %>" tabindex="5"/>
+          </td>
+          <td valign="top" class="name">
+            <label for="addressLine2"></label>
+          </td>
+          <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'addressLine1', 'errors')}">
+            <input type="text" name="address_line2" value="<%=@fives_team.address_line2 if @fives_team %>" size="30" tabindex="9"/>
+          </td>
+        </tr>
+
+        <tr class="prop">
+          <td valign="top" class="name">
+            <label for="mobilePhone">Mobile Phone</label><span class="required"> *</span>
+          </td>
+          <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'mobilePhone','errors')}">
+            <input type="text" name="mobile_phone" value="<%=@fives_team.mobile_phone if @fives_team %>" tabindex="6"/> <span class="tooltip" title="A mobile number is required as text messaging is one of our forms of communication to participating teams."></span>
+          </td>
+          <td valign="top" class="name">
+            <label for="addressTown"></label>
+          </td>
+          <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'addressTown', 'errors')}">
+            <input type="text" name="address_town" value="<%=@fives_team.address_town if @fives_team %>" tabindex="10"/>
+          </td>
+        </tr>
+
+        <tr class="prop">
+          <td valign="top" class="name">
+            <label for="emailAddress">Email Address</label><span class="required"> *</span>
+          </td>
+          <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'emailAddress', 'errors')}">
+            <input type="text" name="email_address" value="<%=@fives_team.email_address if @fives_team %>" size="30" tabindex="7"/> <span class="tooltip" title="For on line applications we require an email address so we can email your invoice. If you don't have an email address download the application form and send it in the post."></span>
+          </td>
+          <td valign="top" class="name">
+            <label for="addressCounty"></label>
+          </td>
+          <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'addressCounty', 'errors')}">
+            <input type="text" name="address_county" value="<%=@fives_team.address_county if @fives_team %>" tabindex="11"/>
+          </td>
+        </tr>
+
+        <tr class="prop">
+          <td></td>
+          <td></td>
+          <td valign="top" class="name">
+            <label for="addressPostcode">Postcode</label>
+          </td>
+          <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'addressPostcode', 'errors')}">
+            <input type="text" name="address_postcode" value="<%=@fives_team.address_postcode if @fives_team %>" size="9" tabindex="12"/>
+          </td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="nav">
+      <div class="button"><input class="save" name="create" type="submit" value="Submit The Application" /></div>
+    </div>
+  </form>
+</div>

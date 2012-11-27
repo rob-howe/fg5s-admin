@@ -1,0 +1,42 @@
+<% if session[:user] %>
+    <div style="float:right;">
+        <a class="home" href="/admin/excel"><img src="/images/excel-image.png" alt="excel"/></a>
+    </div>
+<% end %>
+
+<h1>Team Summary </h1>
+<div class="list">
+    <table>
+        <thead>
+        <tr>
+            <th style="text-align:center;width:100px;">Age Group</th>
+            <th style="text-align:center;width:80px;">Teams</th>
+            <th style="text-align:center;width:80px;">Paid</th>
+            <th style="text-align:center;width:80px;">Not Paid</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% total = 0 %>
+        <% paid = 0 %>
+        <% unpaid = 0 %>
+        <% @summary.each do |summary_line| %>
+            <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+                <% total = total + summary_line.total.to_i %>
+                <% paid = paid + summary_line.paid.to_i %>
+                <% unpaid = unpaid + summary_line.unpaid.to_i %>
+                <td style="text-align:center;">
+                    <a href="/admin/age_group?age_group_id=<%= summary_line.id %>"  id="age_group_<%= summary_line.id %>"><%= summary_line.age_group %></a></td>
+                <td class="number"><%= summary_line.total %></td>
+                <td class="number"><%= summary_line.paid %></td>
+                <td class="number"><%= summary_line.unpaid %></td>
+            </tr>
+        <% end %>
+        <tr>
+            <th>Totals</th>
+            <th class="number"><%= total %></th>
+            <th class="number"><%= paid %></th>
+            <th class="number"><%= unpaid %></th>
+        </tr>
+        </tbody>
+    </table>
+</div>

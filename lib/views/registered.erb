@@ -1,0 +1,107 @@
+<div class="body">
+    <h1>Thank You for Your Application to the FG5's <%= $year %></h1>
+
+    <div class="message">You have submitted the following details.</div>
+    <div class="dialog">
+        <table>
+            <tbody>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Age Group</strong></td>
+                <td valign="top"><%= @age_group.description %></td>
+            </tr>
+            <tr>
+                <td valign="top" class="name"><strong>Team Name</strong></td>
+                <td valign="top"><%= @fives_team.team_name %>
+                    <%= @fives_team.team_designation %>
+                </td>
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Manager Name</strong></td>
+                <td valign="top"><%= @fives_team.manager_name %></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Email Address</strong></td>
+                <td valign="top"><%= @fives_team.email_address %></td>
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Mobile Phone</strong></td>
+                <td valign="top"><%= @fives_team.mobile_phone %></td>
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Home Phone</strong></td>
+
+                <td valign="top"><%= @fives_team.home_phone %></td>
+            </tr>
+
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Address</strong></td>
+                <td valign="top"><%= @fives_team.address_line1 %></td>
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"></td>
+                <td valign="top"><%= @fives_team.address_line2 %></td>
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"></td>
+                <td valign="top"><%= @fives_team.address_town %></td>
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"></td>
+                <td valign="top"><%= @fives_team.address_county %></td>
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Postcode</strong></td>
+                <td valign="top"><%= @fives_team.address_postcode %></td>
+            </tr>
+            <tr>
+                <td colspan="4">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="4">Your application reference id is
+                    <strong><%= @fives_team.ref_id %></strong>.
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <br/>
+    <% if @send_mail_error %>
+        <div class="error">Unfortunately there was an error sending you a confirmation email.
+        </div>
+        <div>
+            If the email address <%= @fives_team.email_address %> you entered is incorrect please email
+            fg5s@forestgladefc.co.uk with the correct email address.
+        </div>
+    <% else %>
+        <p>An email confirming your application will be sent to you shortly.</p>
+    <% end %>
+    <br/>
+
+    <p>If any of the above details are incorrect please email fg5s@forestgladefc.com with any alterations you wish to
+        make.</p>
+    <br/>
+
+    <p>The entry fee is &pound;40 per team.</p>
+    <% if discount_applicable %>
+        <p>As there is a <strong>&pound;5</strong> discount for teams registered before the 31st March
+            <%= $year %> your entry fee is <strong>&pound;35.00</strong> provided payment
+            reaches us before 31st March.</p>
+        <br/>
+    <% end %>
+    <div>
+        <br/>
+
+        <div>
+            <div style="float:left;"><p>Please send a cheque made payable to Forest Glade FC to:</p></div>
+            <div style="float:left;">
+                <p>Lee Ashley<br/>3 Grennan Close<br/>Ingrave<br/>Brentwood<br/>Essex<br/>CM13 3YD</p></div>
+        </div>
+        <div style="clear:both;">
+            <br/>
+
+            <p>Please quote your reference id <strong><%= @fives_team.ref_id %></strong> on all correspondence.</p>
+        </div>
+
+    </div>
+</div>
