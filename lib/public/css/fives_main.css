@@ -23,7 +23,7 @@ body {
     padding: 0px;
     font-family: Tahoma, Verdana, sans-serif;
     font-size: 13px;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .home_banner_text {
@@ -265,7 +265,7 @@ th.desc a {
 /* DIALOG */
 
 .dialog table {
-    padding: 5px 0;
+    padding: 5px 40px;
 }
 
 .prop {
@@ -297,14 +297,14 @@ th.desc a {
     float:right;
 }
 .save {
-    background-color: #0033ff;
+    background-color: #223FAF;;
     border: 1px solid #999999;
     color: #ffffff;
     font-size: 13px;
     font-weight: bold;
     cursor: pointer;
     margin-right: 10px;;
-
+    padding: 4px;
     vertical-align:top;
 }
 

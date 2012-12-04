@@ -1,0 +1,199 @@
+<div id="register_wrapper">
+    <h1>Register Your Team for the FG5's <%= $year %></h1>
+
+    <div class="dialog">
+        <% if applications_closed %>
+            <p><span style="color:red">*** Please <strong>NOTE</strong> applications are now closed </strong> ***</span><br/><br/>
+            </p>
+
+            <p><span style="color:red">* To be placed on the reserve list please contact Lee Ashley on  07507 291485 or email fg5s@forestgladefc.co.uk *</span><br/><br/>
+            </p>
+
+        <% else %>
+            <% if applications_closing %>
+                <p>
+                    <span style="color:red">*** Please <strong>NOTE</strong> the closing date for applications and payment is <strong><%= $closing_date %>
+                        ***</strong></span><br/><br/></p>
+            <% end %>
+
+            <p>You can register your entry in the FG5s <%= $year %> by entering your team details below.<br/></p>
+            <br/>
+            <% if discount_applicable %>
+                <p>The entry fee is <strong>£40</strong> per team. There is a <strong>£5 discount</strong> for teams
+                    registered before the 31st March <%= $year %>.<br/>
+                </p>
+            <% else %>
+                <p>The entry fee is £40 per team.<br/>.</p>
+            <% end %>
+            <p>Your entry will not be confirmed until FGFC has received your entry fee and sent you a confirmation
+                email.</p>
+
+            <p>&nbsp;</p>
+
+            <p>Information on how to pay will be provided once your team is registered.</p>
+            <% if has_errors %>
+                <div class="errors">
+                    <ul>
+                        <li>The fields high lighted in red below are required please provide the information
+                            requested.
+                        </li>
+                    </ul>
+                </div>
+            <% end %>
+            <div id="errors" class="errors" style="display:none;"></div>
+            <form id="form_register" name="register">
+                <div class="dialog">
+                    <table>
+                        <tbody>
+                        <tr class="prop">
+                            <td class="name">
+                                <h3>Team Details</h3>
+                            </td>
+                            <td colspan="2">
+                                <span style="margin-left: 250px;">Fields marked with an <span class="required">*</span> are required.</span>
+                            </td>
+                        </tr>
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="ageGroup.id">Age Group</label><span class="required"> *</span>
+                            </td>
+                            <td id="ageGroupCell" valign="top" class="value">
+                                <select id="ageGroup" name="age_group_id">
+                                    <option value="">Please select</option>
+                                    <% @age_groups.each do |age_group| %>
+                                        <option value="<%= age_group.id %>"><%= age_group.description %></option>
+                                    <% end %>
+                                </select>
+                                <span class="tooltip" title="The age group for your team as of the <%= $season %> football season."></span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="teamName">Team Name</label><span class="required"> *</span>
+                            </td>
+                            <td id="teamNameCell" valign="top" class="value">
+                                <input type="text" id="team_name" name="team_name" value="<%= @fives_team.team_name if @fives_team %>" size="30" tabindex="2" maxlength="60"/>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td valign="top" class="name">
+                                <label for="teamDesignation">Designation</label>
+                            </td>
+                            <td valign="top" class="value">
+                                <input type="text" id="designation" name="team_designation" value="" tabindex="3" maxlength="30"/>
+                                <span class="tooltip" title="Used to identify several teams from one club in the same age group, examples are 'Lions', 'Tigers', 'A', 'Red', 'Blue', 'Volcanos'...etc, it can however be anything you like."></span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="prop">
+                            <td colspan="3" class="name">
+                                <h3>Manager/Contact Details</h3>
+                            </td>
+                        </tr>
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="managerName">Name</label><span class="required"> *</span>
+                            </td>
+                            <td id="managerNameCell" valign="top" class="value">
+                                <input type="text" id="manager_name" name="manager_name" value="<%= @fives_team.manager_name if @fives_team %>" size="30" tabindex="4" maxlength="70"/>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="emailAddress">Email Address</label><span class="required"> *</span>
+                            </td>
+                            <td id="emailAddressCell" valign="top" class="value">
+                                <input type="text" id="emailAddress" name="email_address" value="<%= @fives_team.email_address if @fives_team %>" size="40" tabindex="5" maxlength="60"/>
+                                <span class="tooltip" title="For on line applications we require an email address so we can email your invoice. If you don't have an email address download the application form and send it in the post."></span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="mobilePhone">
+                                    Mobile Phone
+                                </label><span class="required"> *</span>
+                            </td>
+                            <td id="mobilePhoneCell" valign="top" class="value">
+                                <input type="text" id="mobilePhone" name="mobile_phone" value="<%= @fives_team.mobile_phone if @fives_team %>" tabindex="6" maxlength="14"/>
+                                <span class="tooltip" title="A mobile number is required as text messaging is one of our forms of communication to participating teams."></span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="homePhone">Home Phone</label>
+                            </td>
+                            <td id="homePhoneCell" valign="top" class="value">
+                                <input type="text" id="homePhone" name="home_phone" value="<%= @fives_team.home_phone if @fives_team %>" tabindex="7" maxlength="14"/>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td valign="top" class="name">
+                                <label for="addressLine1">Address</label>
+                            </td>
+                            <td valign="top" class="value">
+                                <input type="text" name="address_line1" value="<%= @fives_team.address_line1 if @fives_team %>" size="30" tabindex="8"/>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td valign="top" class="name">
+                                <label for="addressLine2"></label>
+                            </td>
+                            <td valign="top" class="value">
+                                <input type="text" name="address_line2" value="<%= @fives_team.address_line2 if @fives_team %>" size="30" tabindex="9" maxlength="100"/>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td valign="top" class="name">
+                                <label for="addressTown">
+                                    Town
+                                </label>
+                            </td>
+                            <td valign="top" class="value">
+                                <input type="text" name="address_town" value="<%= @fives_team.address_town if @fives_team %>" tabindex="10" maxlength="100"/>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td valign="top" class="name">
+                                <label for="addressCounty">
+                                    County
+                                </label>
+                            </td>
+                            <td valign="top" class="value">
+                                <input type="text" name="address_county" value="<%= @fives_team.address_county if @fives_team %>" tabindex="11" maxlength="50"/>
+                            </td>
+                            <td></td>
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="addressPostcode">
+                                    Postcode
+                                </label>
+                            </td>
+                            <td valign="top" class="value">
+                                <input type="text" name="address_postcode" value="<%= @fives_team.address_postcode if @fives_team %>" size="9" tabindex="12" maxlength="10"/>
+                            </td>
+                            <td></td>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="nav">
+                    <div class="button">
+                        <input class="save" id="submit_your_application" name="create" type="button" value="Submit Your Application" onclick="javascript:validateDetails()"/>
+                    </div>
+                    <a class="save" style="float: left;color: white;padding:4px;" id="cancel" href="http://wwww.thefg5s.co.uk">Cancel</a>
+                    <div style="clear: both"></div>
+                </div>
+            </form>
+        <% end %>
+    </div>
+</div>

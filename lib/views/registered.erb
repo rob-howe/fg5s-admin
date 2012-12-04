@@ -1,4 +1,13 @@
-<div class="body">
+<script type="text/javascript">
+    $('document').ready(function () {
+        $('#add_another_team').click(function () {
+            var data = $("#add_another_form").serialize();
+            submit_form(data, '/add_another');
+        });
+    });
+</script>
+
+<div id="register_wrapper">
     <h1>Thank You for Your Application to the FG5's <%= $year %></h1>
 
     <div class="message">You have submitted the following details.</div>
@@ -104,4 +113,16 @@
         </div>
 
     </div>
+
+    <div class="nav">
+        <form id="add_another_form">
+        <input type="hidden" name="id" value="<%= @fives_team.id %>">
+            <div class="button">
+            <input class="save" id="add_another_team" name="create" type="button" value="Add Another Team" />
+        </div>
+        </form>
+        <a class="save" style="float: left;color: white;padding:4px;" id="cancel" href="http://wwww.thefg5s.co.uk">Finished</a>
+        <div style="clear: both"></div>
+    </div>
+
 </div>

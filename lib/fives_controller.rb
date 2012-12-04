@@ -20,6 +20,15 @@ class FivesController < Sinatra::Base
     erb :register
   end
 
+  post '/add_another' do
+    @age_groups = AgeGroup.find(:all)
+    if params[:id]
+      fives_team = FivesTeam.find(params[:id].to_i)
+      @fives_team = fives_team unless fives_team.nil?
+    end
+    erb :register_form, :layout => false
+  end
+
   post '/registered' do
     begin
       @fives_team = FivesTeam.create(
@@ -39,16 +48,16 @@ class FivesController < Sinatra::Base
       )
       @age_group = AgeGroup.find(params[:age_group_id].to_i)
       send_confirmation_mail @fives_team, @age_group
-      erb :registered
+      erb :registered, :layout => false
     rescue SendMailError => ex
       puts "error registering new team problem sending mail #{ex.message}"
       @send_mail_error = true
-      erb :registered
+      erb :registered, :layout => false
     rescue Exception => ex
 
     rescue => ex
       puts "error registering new team #{ex.message}"
-      erb :register
+      erb :register, :layout => false
     end
 
   end
