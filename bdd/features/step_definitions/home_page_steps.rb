@@ -4,6 +4,10 @@ end
 Then /^I should see the top heading with '(.*)'$/ do |heading|
   @current_page.heading.should == heading
 end
+Then /^I should see the confirmation heading with '(.*)'$/ do| heading|
+  @current_page.confirmation_heading_element.when_present
+  @current_page.confirmation_heading.should == heading
+end
 When /^I select age group '(.*)'$/ do |age_group|
   @current_page.age_group = age_group
 end
@@ -42,4 +46,20 @@ When /^I enter '(.*)' in postcode$/ do |postcode|
 end
 When /^I submit my team$/ do
   @current_page.submit_team
+end
+When /^I should see age group (.*)$/ do |age_group|
+  @current_page.registered_age_group_element.when_present
+  @current_page.registered_age_group.should == age_group
+end
+When /^I should see club name '(.*)'$/ do |club_name|
+  @current_page.registered_club_name.should == club_name
+end
+When /^I should see email address '(.*)'$/ do |email_address|
+  @current_page.registered_email_address.should == email_address
+end
+When /^I should see mobile phone '(.*)'$/ do |mobile_phone|
+  @current_page.registered_mobile_phone.should == mobile_phone
+end
+When /^I should see home phone '(.*)'$/ do |home_phone|
+  @current_page.registered_home_phone.should == home_phone
 end

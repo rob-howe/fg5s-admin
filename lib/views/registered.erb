@@ -8,7 +8,7 @@
 </script>
 
 <div id="register_wrapper">
-    <h1>Thank You for Your Application to the FG5's <%= $year %></h1>
+    <h1 id="confirmation_heading">Thank You for Your Application to the FG5's <%= $year %></h1>
 
     <div class="message">You have submitted the following details.</div>
     <div class="dialog">
@@ -16,52 +16,52 @@
             <tbody>
             <tr class="prop">
                 <td valign="top" class="name"><strong>Age Group</strong></td>
-                <td valign="top"><%= @age_group.description %></td>
+                <td id="registered_age_group" valign="top"><%= @age_group.description %></td>
             </tr>
             <tr>
                 <td valign="top" class="name"><strong>Club Name</strong></td>
-                <td valign="top"><%= @fives_team.team_name %>
+                <td id="registered_club_name" valign="top"><%= @fives_team.team_name %>
                     <%= @fives_team.team_designation %>
                 </td>
             </tr>
             <tr class="prop">
                 <td valign="top" class="name"><strong>Manager Name</strong></td>
-                <td valign="top"><%= @fives_team.manager_name %></td>
+                <td id="registered_manager_name" valign="top"><%= @fives_team.manager_name %></td>
                 <td colspan="2"></td>
             </tr>
             <tr class="prop">
                 <td valign="top" class="name"><strong>Email Address</strong></td>
-                <td valign="top"><%= @fives_team.email_address %></td>
+                <td id="registered_email_address" valign="top"><%= @fives_team.email_address %></td>
             </tr>
             <tr class="prop">
                 <td valign="top" class="name"><strong>Mobile Phone</strong></td>
-                <td valign="top"><%= @fives_team.mobile_phone %></td>
+                <td id="registered_mobile_phone" valign="top"><%= @fives_team.mobile_phone %></td>
             </tr>
             <tr class="prop">
                 <td valign="top" class="name"><strong>Home Phone</strong></td>
 
-                <td valign="top"><%= @fives_team.home_phone %></td>
+                <td id="registered_home_phone" valign="top"><%= @fives_team.home_phone %></td>
             </tr>
 
             <tr class="prop">
                 <td valign="top" class="name"><strong>Address</strong></td>
-                <td valign="top"><%= @fives_team.address_line1 %></td>
+                <td id="registered_address_line1" valign="top"><%= @fives_team.address_line1 %></td>
             </tr>
             <tr class="prop">
                 <td valign="top" class="name"></td>
-                <td valign="top"><%= @fives_team.address_line2 %></td>
+                <td id="registered_address_line2" valign="top"><%= @fives_team.address_line2 %></td>
             </tr>
             <tr class="prop">
                 <td valign="top" class="name"></td>
-                <td valign="top"><%= @fives_team.address_town %></td>
+                <td id="registered_town" valign="top"><%= @fives_team.address_town %></td>
             </tr>
             <tr class="prop">
                 <td valign="top" class="name"></td>
-                <td valign="top"><%= @fives_team.address_county %></td>
+                <td id="registered_county" valign="top"><%= @fives_team.address_county %></td>
             </tr>
             <tr class="prop">
                 <td valign="top" class="name"><strong>Postcode</strong></td>
-                <td valign="top"><%= @fives_team.address_postcode %></td>
+                <td id="registered_postcode" valign="top"><%= @fives_team.address_postcode %></td>
             </tr>
             <tr>
                 <td colspan="4">&nbsp;</td>

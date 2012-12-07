@@ -18,5 +18,11 @@ Feature: Test the register team page
     And I enter 'Middlesex' in county
     And I enter 'EN7 8UU' in postcode
     And I submit my team
+    Then I should see the confirmation heading with 'Thank You for Your Application to the FG5's 2013'
+    And I should see age group U8
+    And I should see club name 'Test FC Storm'
+    And I should see email address 'fred@mcstay.co.uk'
+    And I should see mobile phone '07889 86555'
+    And I should see home phone '01233 578888'
 
 
