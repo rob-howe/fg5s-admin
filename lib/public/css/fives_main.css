@@ -46,6 +46,10 @@ a:link, a:visited, a:hover {
     text-decoration: none;
 }
 
+div {
+    text-align: left;
+}
+
 h1 {
     color: #48802c;
     font-weight: bold;
