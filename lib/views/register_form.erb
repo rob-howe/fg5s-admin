@@ -189,11 +189,19 @@
                 <div class="nav">
                     <div class="button">
                         <input class="save" id="submit_team" name="create" type="button" value="Submit Your Application" onclick="javascript:validateDetails()"/>
+                        <img class="spin" style="display: none" src="/images/spinner.gif" alt="">
+
                     </div>
                     <a class="save" style="float: left;color: white;padding:4px;" id="cancel" href="http://www.thefg5s.co.uk">Cancel</a>
+                    <img class="spin" style="float: left;display: none" src="/images/spinner.gif" alt="">
                     <div style="clear: both"></div>
+
                 </div>
             </form>
         <% end %>
+        <div class="spin" style="position:absolute;top:300px;margin:0 auto;width:300px;height:300px;display: none;">
+            Submitting team<br/>
+            <img  src="/images/spinner.gif" alt="">
+        </div>
     </div>
 </div>

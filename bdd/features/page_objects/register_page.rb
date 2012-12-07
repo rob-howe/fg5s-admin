@@ -5,6 +5,7 @@ class RegisterPage
 
   h1(:heading, :id => 'heading')
 
+  select_list(:age_group, :id => 'age_group')
   text_field(:team_name, :id => "team_name")
   text_field(:designation, :id => "designation")
   text_field(:manager_name, :id => "manager_name")
