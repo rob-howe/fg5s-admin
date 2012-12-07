@@ -23,8 +23,8 @@ ActiveRecord::Base.establish_connection(
 #$age_groups = AgeGroup.find(:all)
 #$user = User.find(:all)
 year = Date.today.year
-$saturday_date = '25'
-$sunday_date = '26'
+$saturday_date = 'Saturday 25th May'
+$sunday_date = 'Sunday 26th May'
 $year =  Date.today.month > 8 ? year + 1 : year
 $season = "#{year}/#{year +1}"
 
