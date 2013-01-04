@@ -1,0 +1,26 @@
+<% if session[:user] %>
+
+<h1>Upload Email Addresses</h1>
+
+    <form action='/admin/upload' enctype="multipart/form-data" method='POST'>
+        <input name="file" type="file" />
+        <input type="submit" value="Upload" />
+    </form>
+
+<div class="list">
+    <% if @duplicate_emails %>
+        <h3>Duplicate Emails</h3>
+        <%@duplicate_emails.each do |email|%>
+           <%= email %><br/>
+       <% end %>
+    <% end %>
+    <% if @invalid_format_emails %>
+        <h3>Invalid Format Emails</h3>
+        <%@invalid_format_emails.each do |email|%>
+           <%= email %><br/>
+       <% end %>
+    <% end %>
+
+</div>
+
+<% end %>

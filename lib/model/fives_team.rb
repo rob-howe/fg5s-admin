@@ -22,6 +22,6 @@ class FivesTeam < ActiveRecord::Base
 
   def ref_id
     ref_id = "000#{self.id}"
-    "fg5s-" + ref_id[-3..-1]
+    "fg5s-" + ref_id[-4..-1]
   end
 end

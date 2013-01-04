@@ -3,6 +3,7 @@ require 'model/age_group'
 require 'model/fives_team'
 require 'model/user'
 require 'model/summary'
+require 'model/mailing_target'
 
 class FivesController < Sinatra::Base
 
@@ -110,5 +111,36 @@ class FivesController < Sinatra::Base
     )
     @age_group = AgeGroup.find(params[:age_group_id].to_i)
     erb :'admin/show_team'
+  end
+
+  get '/admin/upload' do
+    erb :'admin/upload'
+  end
+
+  post '/admin/upload' do
+    unless params[:file] &&  (tmpfile = params[:file][:tempfile]) && (name = params[:file][:filename])
+        @error = "No file selected"
+        erb :'admin/upload'
+      end
+    @duplicate_emails = []
+    @invalid_format_emails = []
+    emails_line = params[:file][:tempfile].read
+    emails = emails_line.split(/\n/)
+    emails.uniq.each do |email|
+        if email =~ /^([a-zA-Z0-9_\-\.]+)@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/
+          begin
+            MailingTarget.create(:email_address => email, :opted_out => false)
+            puts "good email #{email}"
+          rescue ActiveRecord::RecordNotUnique => ex
+            @duplicate_emails << email
+          end
+
+        else
+          @invalid_format_emails << email
+        end
+    end
+
+    erb :'admin/upload'
+
   end
 end
