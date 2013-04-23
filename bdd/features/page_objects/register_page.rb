@@ -30,6 +30,7 @@ class RegisterPage
   td(:registered_town, :id => 'registered_town')
   td(:registered_county, :id => 'registered_county')
   td(:registered_postcode, :id => 'registered_postcode')
+  div(:errors, :id => 'errors')
 
 
 end

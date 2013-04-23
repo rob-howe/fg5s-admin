@@ -1,6 +1,6 @@
 Feature: Test the register team page
 
-  Scenario: I go to the home page
+  Scenario: I can submit valid data
     Given I go to the register page
     Then I should see the top heading with 'Register Your Team for the FG5's 2013'
     And I select age group 'U8'
@@ -19,10 +19,18 @@ Feature: Test the register team page
     And I enter 'EN7 8UU' in postcode
     And I submit my team
     Then I should see the confirmation heading with 'Thank You for Your Application to the FG5's 2013'
-    And I should see age group U8
+    And I should see age group 'U8'
     And I should see club name 'Test FC Storm'
     And I should see email address 'fred@mcstay.co.uk'
     And I should see mobile phone '07889 86555'
     And I should see home phone '01233 578888'
 
 
+  Scenario: Validate the age group must be selected
+    Given I go to the register page
+    And I submit my team
+    Then I the error messages should contain 'Please select an age group'
+    Then I the error messages should contain 'Please provide your Club/Team Name'
+    Then I the error messages should contain 'Please enter the Manager's Name'
+    Then I the error messages should contain 'Please enter a Mobile Phone Number'
+    Then I the error messages should contain 'Please enter an Email Address'

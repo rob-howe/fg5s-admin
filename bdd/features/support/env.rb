@@ -11,7 +11,8 @@ World PageObject::PageFactory
 
 ENV['BROWSER'].nil? ? BROWSER_NAME = :firefox : BROWSER_NAME = ENV['BROWSER'].to_sym
 
-browser = Watir::Browser.new(BROWSER_NAME, :profile=>"default")
+#browser = Watir::Browser.new(BROWSER_NAME, :profile=>"default")
+browser = Watir::Browser.new(:firefox)
 
 Before do
   @browser = browser

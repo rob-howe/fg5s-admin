@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Forest Glade Fives</title>
+    <link rel="stylesheet" href="/css/fives_main.css"/>
+    <link rel="stylesheet" href="/css/fives.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="/script/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="/script/fgfc.js"></script>
+    <script type="text/javascript" src="/script/application.js"></script>
+    <script type="text/javascript" src="/script/validation.js"></script>
+    <script type="text/javascript" src="/fancyBox/lib/jquery-1.8.2.min.js"></script>
+    <link rel="stylesheet" href="/fancyBox/source/jquery.fancybox.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="/fancyBox/source/jquery.fancybox.pack.js"></script>
+
+    <link rel="icon" type="image/ico" href="http://www.thefg5s.co.uk/favicon.ico"/>
+    <% if ENV['DATABASE_URL'] != 'localhost' %>
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-36606370-2']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+    <% end %>
+</head>
+<body>
+<div id="body_container">
+    <div id="header-X">
+        <div id="Xslogan">
+            <img src="/images/fives_header.png" alt="banner"/>
+            <!--menu-->
+            <div id=fgfc_menu>
+                <ul>
+                    <li style="list-style: none;text-align:right;padding-right:60px;color:white;">
+                        <% if session[:user] %>
+                            logged in:<%= session[:user_name] %>
+                        <% else %>
+                            <a href="/login">login</a>
+                        <% end %>
+                    </li>
+                </ul>
+            </div>
+            <!--menu end-->
+        </div>
+    </div>
+    <div id="content_wrapper">
+        <div id="top_frame">
+            <div style="width:132px;display:block;height: 135px;float:left; position:relative;">
+                <img src="/images/fg5s-small-logo-no-year.png" alt="FG5's" style="position:absolute;vertical-align:top;margin-left:8px;margin-right:5px;"/>
+                <span style="position:absolute;bottom:-15px;color:#006;margin-left:20px;font-size: 39px;font-weight: bold;">2013</span>
+            </div>
+            <img src="/images/WebHome3.png" alt="banner"/>
+            <img src="/images/WebHome1.png" alt="banner"/>
+            <img src="/images/WebHome6.png" alt="banner"/>
+            <img src="/images/WebHome4.png" alt="banner"/>
+        </div>
+
+        <div>
+            <div id="left-nav">
+                <table>
+                        <tr>
+                            <td colspan="2" style="padding-top:10px;padding-bottom:10px;text-align:center;background-color:#9acd32;border: solid 1px #d3d3d3">
+                                <form action="/admin/add_team" method="post">
+                                    <input type="submit" class="save" name="add" value="Add Team"/>
+                                </form>
+                            </td>
+                        </tr>
+                </table>
+            </div>
+
+            <div id="content">
+                <div class="body">
+                    <%= yield %>
+                </div>
+            </div>
+        </div>
+        <div id="footer"> &copy;<%= $season %> Forest Glade Football Club</div>
+    </div>
+</div>
+</body>
+</html>

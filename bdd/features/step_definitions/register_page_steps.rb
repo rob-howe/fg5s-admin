@@ -47,7 +47,7 @@ end
 When /^I submit my team$/ do
   @current_page.submit_team
 end
-When /^I should see age group (.*)$/ do |age_group|
+When /^I should see age group '(.*)'$/ do |age_group|
   @current_page.registered_age_group_element.when_present
   @current_page.registered_age_group.should == age_group
 end
@@ -62,4 +62,9 @@ When /^I should see mobile phone '(.*)'$/ do |mobile_phone|
 end
 When /^I should see home phone '(.*)'$/ do |home_phone|
   @current_page.registered_home_phone.should == home_phone
+end
+
+
+Then /^I the error messages should contain '(.*)'$/ do |message|
+  @current_page.errors.should include message
 end
