@@ -1,5 +1,5 @@
 <div id="register_wrapper">
-<h1 id="heading">Register Your Team for the FG5's <%= $year %></h1>
+<h1 id="heading">Register Your Team for the FG5's <%= $fives_year %></h1>
 
 <div class="dialog">
     <% if applications_closed %>
@@ -16,11 +16,11 @@
                         ***</strong></span><br/><br/></p>
         <% end %>
 
-        <p>You can register your entry in the FG5s <%= $year %> by entering your team details below.<br/></p>
+        <p>You can register your entry in the FG5s <%= $fives_year %> by entering your team details below.<br/></p>
         <br/>
         <% if discount_applicable %>
             <p>The entry fee is <strong>£40</strong> per team. There is a <strong>£5 discount</strong> for teams
-                registered before the 31st March <%= $year %>.<br/>
+                registered before the 31st March <%= $fives_year %>.<br/>
             </p>
         <% else %>
             <p>The entry fee is £40 per team.<br/>.</p>

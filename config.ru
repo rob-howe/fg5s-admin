@@ -26,8 +26,9 @@ ActiveRecord::Base.establish_connection(
 year = Date.today.year
 $saturday_date = 'Saturday 25th May'
 $sunday_date = 'Sunday 26th May'
-$year =  Date.today.month > 8 ? year + 1 : year
-$season = "2012/2013"
+$fives_year =  Date.today.month > 8 ? year + 1 : year
+season_year =  Date.today.month < 8 ? year - 1 : year
+$season = "#{season_year}/#{season_year + 1}"
 
 $closing_date = 'Friday 3rd May 2013'
 $discount_end_date = 'Friday 4th May 2012'

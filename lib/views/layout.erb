@@ -10,22 +10,25 @@
     <script type="text/javascript" src="/script/application.js"></script>
     <script type="text/javascript" src="/script/validation.js"></script>
     <script type="text/javascript" src="/fancyBox/lib/jquery-1.8.2.min.js"></script>
-    <link rel="stylesheet" href="/fancyBox/source/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/fancyBox/source/jquery.fancybox.css" type="text/css" media="screen"/>
     <script type="text/javascript" src="/fancyBox/source/jquery.fancybox.pack.js"></script>
 
     <link rel="icon" type="image/ico" href="http://www.thefg5s.co.uk/favicon.ico"/>
     <% if ENV['DATABASE_URL'] != 'localhost' %>
         <script type="text/javascript">
 
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-36606370-2']);
-          _gaq.push(['_trackPageview']);
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-36606370-2']);
+            _gaq.push(['_trackPageview']);
 
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
 
         </script>
     <% end %>
@@ -67,7 +70,7 @@
                 <table>
                     <% if session[:user] %>
                         <tr>
-                            <td colspan="2" style="padding-top:10px;padding-bottom:10px;background-color:#9acd32;text-align:center;border: solid 1px #d3d3d3">
+                            <td colspan="2" style="padding-top:10px;padding-bottom:10px;background-color:#9acd32;border: solid 1px #d3d3d3">
                                 <a class="home" href="/admin/summary"><span style="font-size:13px;">Team Summary</span></a>
                             </td>
                         </tr>
@@ -87,87 +90,87 @@
                             </td>
                         </tr>
                     <% end %>
-                    <tr>
-                        <td colspan="2">--------------------------------</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><a class="home" href="/">FG5's Home</a></td>
-                    </tr>
-                    <tr>
-                    <tr>
-                        <td colspan="2">--------------------------------</td>
-                    </tr>
-                    <td colspan="2" style="padding-top:10px;padding-bottom:10px;background-color:#dcdcdc;border: solid 1px #d3d3d3">
-                        <a id="apply_online" class="home" href="/register"><h4>Apply Online</h4></a>
-                        <br/>or download an
-                        <br/><br/><a class="home" href="/pdf/fg5s_application_form.pdf" target="_blank">
-                        <h4>Application Form</h4></a>
-                    </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">--------------------------------</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><a class="home" href="/rules">Rules And Regulations</a></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><a class="home" href="/location">FG5's Location</a></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">--------------------------------</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><h4><%= $saturday_date %></h4></td>
-                    </tr>
-                    <tr>
-                        <td><a class="home" href="/teams/U6"><h3>U6</h3></a></td>
-                        <td><a class="home" href="/teams/U8"><h3>U8</h3></a></td>
-                    </tr>
-                    <tr>
-                        <td><a class="home" href="/teams/U10"><h3>U10</h3></a></td>
-                        <td><a class="home" href="/teams/U12"><h3>U12</h3></a></td>
-                    </tr>
-                    <tr>
-                        <td><a class="home" href="/teams/U14"><h3>U14</h3></a></td>
-                        <td><a class="home" href="/teams/U16"><h3>U16</h3></a></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">--------------------------------</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><h4><%= $sunday_date %></h4></td>
-                    </tr>
-                    <tr>
-                        <td><a class="home" href="/teams/U7"><h3>U7</h3></a></td>
-                        <td><a class="home" href="/teams/U9"><h3>U9</h3></a></td>
-                    </tr>
-                    <tr>
-                        <td><a class="home" href="/teams/U11_Girls"><h3>U11 Girls</h3></a></td>
-                        <td><a class="home" href="/teams/U11"><h3>U11</h3></a></td>
-                    </tr>
-                    <tr>
-                        <td><a class="home" href="/teams/U13_Girls"><h3>U13 Girls</h3></a></td>
-                        <td><a class="home" href="/teams/U13"><h3>U13</h3></a></td>
-                    </tr>
-                    <tr>
-                        <td><a class="home" href="/teams/U15"><h3>U15</h3></a></td>
-                        <td><a class="home" href="/teams/U18"><h3>U18</h3></a></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">--------------------------------</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><a class="home" href="/referees">Referees</a></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><a class="home" href="/sponsorship">Sponsorship</a></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><a class="home" href="/contacts">FG5's Contacts</a></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><a class="home" href="http://www.forestgladefc.co.uk">FGFC.co.uk</a></td>
-                    </tr>
+                        <tr>
+                            <td colspan="2">--------------------------------</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><a class="home" href="http://www.thefg5s.co.uk">FG5's Home</a></td>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <td colspan="2">--------------------------------</td>
+                        </tr>
+                        <td colspan="2" style="padding-top:10px;padding-bottom:10px;background-color:#dcdcdc;border: solid 1px #d3d3d3">
+                            <a id="apply_online" class="home" href="/register"><h4>Apply Online</h4></a>
+                            <br/>or download an
+                            <br/><br/><a class="home" href="http://www.thefg5s.co.uk/pdf/fg5s_application_form.pdf" target="_blank">
+                            <h4>Application Form</h4></a>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">--------------------------------</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><a class="home" href="http://www.thefg5s.co.uk/rules">Rules And Regulations</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><a class="home" href="http://www.thefg5s.co.uk/location">FG5's Location</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">--------------------------------</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><h4><%= $saturday_date %></h4></td>
+                        </tr>
+                        <tr>
+                            <td><a class="home" href="http://www.thefg5s.co.uk/teams/U6"><h3>U6</h3></a></td>
+                            <td><a class="home" href="http://www.thefg5s.co.uk/teams/U8"><h3>U8</h3></a></td>
+                        </tr>
+                        <tr>
+                            <td><a class="home" href="http://www.thefg5s.co.uk/teams/U10"><h3>U10</h3></a></td>
+                            <td><a class="home" href="http://www.thefg5s.co.uk/teams/U12"><h3>U12</h3></a></td>
+                        </tr>
+                        <tr>
+                            <td><a class="home" href="http://www.thefg5s.co.uk/teams/U14"><h3>U14</h3></a></td>
+                            <td><a class="home" href="http://www.thefg5s.co.uk/teams/U16"><h3>U16</h3></a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">--------------------------------</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><h4><%= $sunday_date %></h4></td>
+                        </tr>
+                        <tr>
+                            <td><a class="home" href="http://www.thefg5s.co.uk/teams/U7"><h3>U7</h3></a></td>
+                            <td><a class="home" href="http://www.thefg5s.co.uk/teams/U9"><h3>U9</h3></a></td>
+                        </tr>
+                        <tr>
+                            <td><a class="home" href="http://www.thefg5s.co.uk/teams/U11_Girls"><h3>U11 Girls</h3></a></td>
+                            <td><a class="home" href="http://www.thefg5s.co.uk/teams/U11"><h3>U11</h3></a></td>
+                        </tr>
+                        <tr>
+                            <td><a class="home" href="/teams/U13_Girls"><h3>U13 Girls</h3></a></td>
+                            <td><a class="home" href="/teams/U13"><h3>U13</h3></a></td>
+                        </tr>
+                        <tr>
+                            <td><a class="home" href="http://www.thefg5s.co.uk/teams/U15"><h3>U15</h3></a></td>
+                            <td><a class="home" href="http://www.thefg5s.co.uk/teams/U18"><h3>U18</h3></a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">--------------------------------</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><a class="home" href="http://www.thefg5s.co.uk/referees">Referees</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><a class="home" href="http://www.thefg5s.co.uk/sponsorship">Sponsorship</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><a class="home" href="http://www.thefg5s.co.uk/contacts">FG5's Contacts</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><a class="home" href="http://www.forestgladefc.co.uk">FGFC.co.uk</a></td>
+                        </tr>
                 </table>
             </div>
 
