@@ -3,17 +3,25 @@
 
 <div class="dialog">
     <% if applications_closed %>
-        <p><span style="color:red">*** Please <strong>NOTE</strong> applications are now closed </strong>***</span><br/><br/>
-        </p>
+        <br/>
+        <span style="color:red;font-size: 20px;">*** <strong>Please Note:</strong> Online applications have now closed ***<br/><br/></span>
+            <span style="font-size: 16px;">Any enquiries should be made by email to:fg5s@forestgladefc.co.uk or by<br/> phone/text on: 07507-291485</span>
+        <br/>
+        <br/>
+    <div class="nav">
+        <span class="spin" style="color:blue;font-size:14px;font-weight:bold;margin-left:240px;display: none;">Submitting your team</span>
+        <a class="save" style="float: left;color: white;padding:4px;" id="cancel" href="http://www.thefg5s.co.uk">Close</a>
+        <img class="spin" style="float: left;display: none" src="/images/spinner.gif" alt="">
 
-        <p><span style="color:red">* To be placed on the reserve list please contact Lee Ashley on  07507 291485 or email fg5s@forestgladefc.co.uk *</span><br/><br/>
-        </p>
+        <div style="clear: both"></div>
+    </div>
 
     <% else %>
         <% if applications_closing %>
             <p>
                     <span style="color:red">*** Please <strong>NOTE</strong> the closing date for applications and payment is <strong><%= $closing_date %>
                         ***</strong></span><br/><br/></p>
+
         <% end %>
 
         <p>You can register your entry in the FG5s <%= $fives_year %> by entering your team details below.<br/></p>
