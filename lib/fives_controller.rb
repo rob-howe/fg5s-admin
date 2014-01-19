@@ -99,7 +99,7 @@ class FivesController < Sinatra::Base
                 :port => '587',
                 :enable_starttls_auto => true,
                 :user_name => 'fg5s@forestgladefc.co.uk',
-                :password => 'fives-f0restg!ade',
+                :password => 'f0restg!ade5s',
                 :authentication => :plain,
                 :domain => 'localhost.localdomain'
             })
