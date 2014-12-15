@@ -67,7 +67,7 @@ class FivesController < Sinatra::Base
   helpers do
     def discount_applicable
       #todo make work
-      false
+      true
     end
 
     def has_errors
@@ -76,7 +76,7 @@ class FivesController < Sinatra::Base
 
     def applications_closed
       $closing_date
-      true
+      false
     end
 
     def applications_closing
