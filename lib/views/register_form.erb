@@ -95,6 +95,26 @@
                         </td>
                         <td></td>
                     </tr>
+                    <tr>
+                        <td valign="top" class="name">
+                            <label for="league">League</label>
+                        </td>
+                        <td valign="top" class="value">
+                            <input type="text" id="league" name="league" value="" tabindex="4" size="60" maxlength="80"/>
+                            <span class="tooltip" title="The league your team plays in."></span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td valign="top" class="name">
+                            <label for="division">Division</label>
+                        </td>
+                        <td valign="top" class="value">
+                            <input type="text" id="division" name="division" value="" tabindex="5" maxlength="50"/>
+                            <span class="tooltip" title="The division your team is in."></span>
+                        </td>
+                        <td></td>
+                    </tr>
                     <tr class="prop">
                         <td colspan="3" class="name">
                             <h3>Manager/Contact Details</h3>
@@ -105,7 +125,7 @@
                             <label for="managerName">Name</label><span class="required"> *</span>
                         </td>
                         <td id="managerNameCell" valign="top" class="value">
-                            <input type="text" id="manager_name" name="manager_name" value="<%= @fives_team.manager_name if @fives_team %>" size="30" tabindex="4" maxlength="70"/>
+                            <input type="text" id="manager_name" name="manager_name" value="<%= @fives_team.manager_name if @fives_team %>" size="30" tabindex="6" maxlength="70"/>
                         </td>
                         <td></td>
                     </tr>
@@ -114,7 +134,7 @@
                             <label for="emailAddress">Email Address</label><span class="required"> *</span>
                         </td>
                         <td id="emailAddressCell" valign="top" class="value">
-                            <input type="text" id="email_address" name="email_address" value="<%= @fives_team.email_address if @fives_team %>" size="40" tabindex="5" maxlength="60"/>
+                            <input type="text" id="email_address" name="email_address" value="<%= @fives_team.email_address if @fives_team %>" size="40" tabindex="7" maxlength="60"/>
                             <span class="tooltip" title="For on line applications we require an email address so we can email your invoice. If you don't have an email address download the application form and send it in the post."></span>
                         </td>
                         <td></td>
@@ -126,7 +146,7 @@
                             </label><span class="required"> *</span>
                         </td>
                         <td id="mobilePhoneCell" valign="top" class="value">
-                            <input type="text" id="mobile_phone" name="mobile_phone" value="<%= @fives_team.mobile_phone if @fives_team %>" tabindex="6" maxlength="14"/>
+                            <input type="text" id="mobile_phone" name="mobile_phone" value="<%= @fives_team.mobile_phone if @fives_team %>" tabindex="8" maxlength="14"/>
                             <span class="tooltip" title="A mobile number is required as text messaging is one of our forms of communication to participating teams."></span>
                         </td>
                         <td></td>
@@ -136,7 +156,7 @@
                             <label for="homePhone">Home Phone</label>
                         </td>
                         <td id="homePhoneCell" valign="top" class="value">
-                            <input type="text" id="home_phone" name="home_phone" value="<%= @fives_team.home_phone if @fives_team %>" tabindex="7" maxlength="14"/>
+                            <input type="text" id="home_phone" name="home_phone" value="<%= @fives_team.home_phone if @fives_team %>" tabindex="9" maxlength="14"/>
                         </td>
                         <td></td>
                     </tr>
@@ -145,7 +165,7 @@
                             <label for="addressLine1">Address</label>
                         </td>
                         <td valign="top" class="value">
-                            <input type="text" id="address_line1" name="address_line1" value="<%= @fives_team.address_line1 if @fives_team %>" size="30" tabindex="8"/>
+                            <input type="text" id="address_line1" name="address_line1" value="<%= @fives_team.address_line1 if @fives_team %>" size="30" tabindex="10"/>
                         </td>
                         <td></td>
                     </tr>
@@ -154,7 +174,7 @@
                             <label for="addressLine2"></label>
                         </td>
                         <td valign="top" class="value">
-                            <input type="text" id="address_line2" name="address_line2" value="<%= @fives_team.address_line2 if @fives_team %>" size="30" tabindex="9" maxlength="100"/>
+                            <input type="text" id="address_line2" name="address_line2" value="<%= @fives_team.address_line2 if @fives_team %>" size="30" tabindex="11" maxlength="100"/>
                         </td>
                         <td></td>
                     </tr>
@@ -165,7 +185,7 @@
                             </label>
                         </td>
                         <td valign="top" class="value">
-                            <input type="text" id="town" name="address_town" value="<%= @fives_team.address_town if @fives_team %>" tabindex="10" maxlength="100"/>
+                            <input type="text" id="town" name="address_town" value="<%= @fives_team.address_town if @fives_team %>" tabindex="12" maxlength="100"/>
                         </td>
                         <td></td>
                     </tr>
@@ -176,7 +196,7 @@
                             </label>
                         </td>
                         <td valign="top" class="value">
-                            <input type="text" id="county" name="address_county" value="<%= @fives_team.address_county if @fives_team %>" tabindex="11" maxlength="50"/>
+                            <input type="text" id="county" name="address_county" value="<%= @fives_team.address_county if @fives_team %>" tabindex="13" maxlength="50"/>
                         </td>
                         <td></td>
                     </tr>
@@ -188,7 +208,7 @@
                             </label>
                         </td>
                         <td valign="top" class="value">
-                            <input type="text" id="postcode" name="address_postcode" value="<%= @fives_team.address_postcode if @fives_team %>" size="9" tabindex="12" maxlength="10"/>
+                            <input type="text" id="postcode" name="address_postcode" value="<%= @fives_team.address_postcode if @fives_team %>" size="9" tabindex="14" maxlength="10"/>
                         </td>
                         <td></td>
                     </tbody>

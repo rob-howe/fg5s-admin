@@ -17,6 +17,12 @@ end
 When /^I enter '(.*)' in designation$/ do |designation|
   @current_page.designation = designation
 end
+When /^I enter '(.*)' in league$/ do |league|
+  @current_page.league = league
+end
+When /^I enter '(.*)' in division$/ do |division|
+  @current_page.division = division
+end
 When /^I enter '(.*)' in manger name$/ do |manager_name|
   @current_page.manager_name = manager_name
 end
@@ -54,8 +60,14 @@ end
 When /^I should see club name '(.*)'$/ do |club_name|
   @current_page.registered_club_name.should == club_name
 end
-When /^I should see email address '(.*)'$/ do |email_address|
-  @current_page.registered_email_address.should == email_address
+When /^I should see club name '(.*)'$/ do |club_name|
+  @current_page.registered_club_name.should == club_name
+end
+When /^I should see league '(.*)'$/ do |league|
+  @current_page.registered_league.should == league
+end
+When /^I should see division '(.*)'$/ do |division|
+  @current_page.registered_division.should == division
 end
 When /^I should see mobile phone '(.*)'$/ do |mobile_phone|
   @current_page.registered_mobile_phone.should == mobile_phone

@@ -4,6 +4,8 @@ class FivesTeam < ActiveRecord::Base
   #              :age_group,
   #              :team_name,
   #              :team_designation,
+  #              :team_league,
+  #              :team_division,
   #              :manager_name,
   #              :home_phone,
   #              :mobile_phone,

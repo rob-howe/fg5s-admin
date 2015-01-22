@@ -71,6 +71,8 @@ class FivesController < Sinatra::Base
     @fives_team.age_group_id = params[:age_group_id]
     @fives_team.team_name = params[:team_name]
     @fives_team.team_designation = params[:team_designation]
+    @fives_team.league_name = params[:league]
+    @fives_team.league_division = params[:division]
     @fives_team.paid = !params[:paid].nil?
     @fives_team.paypal = !params[:paypal].nil?
     @fives_team.manager_name = params[:manager_name]
@@ -90,7 +92,7 @@ class FivesController < Sinatra::Base
 
   post '/admin/add_team' do
     @age_groups = AgeGroup.find(:all)
-    erb:'admin/add_team'
+    erb :'admin/add_team'
   end
 
   post '/admin/save' do
@@ -98,6 +100,8 @@ class FivesController < Sinatra::Base
         :age_group_id => params[:age_group_id],
         :team_name => params[:team_name],
         :team_designation => params[:team_designation],
+        :league_name => params[:league],
+        :league_division => params[:division],
         :manager_name => params[:manager_name],
         :mobile_phone => params[:mobile_phone],
         :home_phone => params[:home_phone],

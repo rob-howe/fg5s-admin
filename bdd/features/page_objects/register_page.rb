@@ -9,6 +9,8 @@ class RegisterPage
   select_list(:age_group, :id => 'age_group')
   text_field(:team_name, :id => "team_name")
   text_field(:designation, :id => "designation")
+  text_field(:league, :id => "league")
+  text_field(:division, :id => "division")
   text_field(:manager_name, :id => "manager_name")
   text_field(:email_address, :id => "email_address")
   text_field(:mobile_phone, :id => "mobile_phone")

@@ -35,6 +35,8 @@ class FivesController < Sinatra::Base
           :age_group_id => params[:age_group_id],
           :team_name => params[:team_name],
           :team_designation => params[:team_designation],
+          :league_name => params[:league],
+          :league_division => params[:division],
           :manager_name => params[:manager_name],
           :mobile_phone => params[:mobile_phone],
           :home_phone => params[:home_phone],

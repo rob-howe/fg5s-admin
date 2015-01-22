@@ -50,6 +50,27 @@
             <span class="tooltip" title="Used to identify several teams from one club in the same age group, examples are 'Lions', 'Tigers', 'A', 'Red', 'Blue', 'Volcanos'...etc, it can however be anything you like."></span>
           </td>
         </tr>
+        <tr class="prop">
+            <td colspan="4" class="name">
+                <h3>League</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" class="name">
+                <label for="league">Name</label>
+            </td>
+            <td colspan="3" valign="top" class="value">
+                <input type="text" name="league" value="<%=@fives_team.league_name if @fives_team %>" size="80" tabindex="4"/>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" class="name">
+                <label for="division">Division</label>
+            </td>
+            <td valign="top" class="value">
+                <input type="text" name="division" value="<%=@fives_team.league_division if @fives_team %>" size="20" tabindex="5"/>
+            </td>
+        </tr>
 
         <tr class="prop">
           <td colspan="4" class="name">
