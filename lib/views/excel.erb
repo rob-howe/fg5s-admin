@@ -18,6 +18,8 @@
         <td style="background-color:blue;color:white;font-weight:bold;">Reference</td>
         <td style="background-color:blue;color:white;font-weight:bold;">Team Name</td>
         <td style="background-color:blue;color:white;font-weight:bold;">Designation</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">League</td>
+        <td style="background-color:blue;color:white;font-weight:bold;">Division</td>
         <td style="background-color:blue;color:white;font-weight:bold;">Manager Name</td>
         <td style="background-color:blue;color:white;font-weight:bold;">Home Phone</td>
         <td style="background-color:blue;color:white;font-weight:bold;">Mobile Phone</td>
@@ -49,6 +51,8 @@
                 <td><%= team.ref_id %></td>
                 <td><%= team.team_name %></td>
                 <td><%= team.team_designation %><%='&nbsp;' if team.team_designation.empty? %></td>
+                <td><%= team.league_name %></td>
+                <td><%= team.league_division %></td>
                 <td><%= team.manager_name %></td>
                 <td><%= team.home_phone %><%='&nbsp;' if team.home_phone.empty? %></td>
                 <td><%= team.mobile_phone %></td>
