@@ -18,11 +18,11 @@
     </tr>
     <tr>
       <td valign="top" class="name"><strong>League</strong></td>
-      <td valign="top" ><%=fives_team.league_name%> <%=fives_team.league_name%></td>
+      <td valign="top" ><%=fives_team.league_name%></td>
     </tr>
     <tr>
       <td valign="top" class="name"><strong>Division</strong></td>
-      <td valign="top" ><%=fives_team.league_division%> <%=fives_team.league_division%></td>
+      <td valign="top" ><%=fives_team.league_division%></td>
     </tr>
     <tr class="prop">
       <td valign="top" class="name"><strong>Manager Name</strong></td>
@@ -90,8 +90,29 @@
         <p>The entry fee is &pound;40 per team, please make your cheque out for this amount.</p>
 <% end %>
 <br/>
-<p>All cheques should be made payable to Forest Glade FC.</p>
+
+<p>If you would like to pay by bank transfer then please send with reference <strong><%=$fives_year%>-<%=fives_team.ref_id%></strong> to:</p>
+<table style="margin-left: 20px;">
+    <tbody>
+    <tr class="prop">
+        <td valign="top" class="name"><strong>Bank:</strong></td>
+        <td valign="top">HSBC</td>
+    </tr>
+    <tr class="prop">
+        <td valign="top" class="name"><strong>Sort Code:</strong></td>
+        <td valign="top">40-09-17</td>
+    </tr>
+    <tr class="prop">
+        <td valign="top" class="name"><strong>Account Number:</strong></td>
+        <td valign="top">21555952</td>
+    </tr>
+    </tbody>
+</table>
+
+
 <br/>
+<p>or</p>
+<p>Pay by cheque, made payable to Forest Glade FC.</p>
 <table>
   <tr>
     <td style="vertical-align:text-top;"><strong>Please send cheques to:</strong></td>

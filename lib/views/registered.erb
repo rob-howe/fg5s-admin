@@ -109,18 +109,34 @@
         <br/>
     <% end %>
     <div>
+        <p>If you would like to pay by bank transfer then please send with reference <strong><%=$fives_year%>-<%=@fives_team.ref_id%></strong> to:</p>
+        <table style="margin-left: 20px;width:90%">
+            <tbody>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Bank:</strong></td>
+                <td valign="top">HSBC</td>
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Sort Code:</strong></td>
+                <td valign="top">40-09-17</td>
+            </tr>
+            <tr class="prop">
+                <td valign="top" class="name"><strong>Account Number:</strong></td>
+                <td valign="top">21555952</td>
+            </tr>
+            </tbody>
+        </table>
         <br/>
+        <p>or</p>
+        <p>Pay by cheque, made payable to Forest Glade FC.</p>
+        <table style="margin-left: 20px;width:90%">
+            <tr>
+                <td style="vertical-align:text-top;"><strong>Please send cheques to:</strong></td>
+                <td>Lee Ashley<br/>3 Grennan Close<br/>Ingrave<br/>Brentwood<br/>Essex<br/>CM13 3YD</td>
+            </tr>
+        </table>
 
-        <div>
-            <div style="float:left;"><p>Please send a cheque made payable to Forest Glade FC to:</p></div>
-            <div style="float:left;">
-                <p>Lee Ashley<br/>3 Grennan Close<br/>Ingrave<br/>Brentwood<br/>Essex<br/>CM13 3YD</p></div>
-        </div>
-        <div style="clear:both;">
-            <br/>
-
-            <p>Please quote your reference id <strong><%= @fives_team.ref_id %></strong> on all correspondence.</p>
-        </div>
+        <p>Please quote your reference id <strong><%= @fives_team.ref_id %></strong> on all correspondence.</p>
 
     </div>
 

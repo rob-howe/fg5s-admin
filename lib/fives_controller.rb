@@ -49,17 +49,13 @@ class FivesController < Sinatra::Base
           :date_registered => Time.now
       )
       @age_group = AgeGroup.find(params[:age_group_id].to_i)
-      unless ENV['DATABASE_URL'] == 'localhost'
-        send_confirmation_mail @fives_team, @age_group
-      end
+      send_confirmation_mail(@fives_team, @age_group) unless ENV['DATABASE_URL'] == 'localhost'
       erb :registered, :layout => false
     rescue SendMailError => ex
       puts "error registering new team problem sending mail #{ex.message}"
       @send_mail_error = true
       erb :registered, :layout => false
     rescue Exception => ex
-
-    rescue => ex
       puts "error registering new team #{ex.message}"
       erb :register, :layout => false
     end
