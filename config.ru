@@ -11,6 +11,7 @@ ENV['USER_NAME'] = 'root' if ENV['USER_NAME'].nil?
 ENV['PASSWORD'] = 'password' if ENV['PASSWORD'].nil?
 ENV['SCHEMA'] = 'forest_glade' if ENV['SCHEMA'].nil?
 #ENV['SCHEMA'] = 'fgfc_in_memory' if ENV['SCHEMA'].nil?
+puts "ENV['DATABASE_URL']=#{ENV['DATABASE_URL']}"
 
 ActiveRecord::Base.establish_connection(
 :adapter => "mysql2",

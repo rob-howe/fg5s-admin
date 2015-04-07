@@ -39,6 +39,15 @@
         <p>&nbsp;</p>
 
         <p>Information on how to pay will be provided once your team is registered.</p>
+        <% if any_age_groups_closed? %>
+            <br/>
+            <div style="color:red;font-size: 12px;">
+                <strong>Please Note:</strong> Online applications have now closed for the <%= age_groups_closed %> age group(s).
+                <span> Application enquiries for this age group should be made by email to: fg5s@forestgladefc.co.uk or by phone/text on: 07507-291485.<br/></span>
+                <br/>
+            </div>
+        <% end %>
+
         <% if has_errors %>
             <div class="errors">
                 <ul>

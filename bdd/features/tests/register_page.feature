@@ -37,3 +37,10 @@ Feature: Test the register team page
     Then I the error messages should contain 'Please enter the Manager's Name'
     Then I the error messages should contain 'Please enter a Mobile Phone Number'
     Then I the error messages should contain 'Please enter an Email Address'
+
+
+  Scenario: A team age group is closed
+    Given the U8 team is closed
+    When I go to the register page
+    Then I should see a message saying the U8's is closed
+    And the age group drop down shoukd not contain the U8 option

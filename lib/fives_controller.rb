@@ -16,7 +16,7 @@ class FivesController < Sinatra::Base
   end
 
   get '/register' do
-    @age_groups = AgeGroup.find(:all)
+    @age_groups = AgeGroup.where(:open => true)
     erb :register
   end
 
@@ -80,6 +80,14 @@ class FivesController < Sinatra::Base
     def applications_closing
       $closing_date
       false
+    end
+
+    def any_age_groups_closed?
+      AgeGroup.where(:open => false)
+    end
+
+    def age_groups_closed
+      (AgeGroup.where(:open => false).collect {|age_group| age_group.description}).join(', ')
     end
 
     def send_confirmation_mail fives_team, age_group
