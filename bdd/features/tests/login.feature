@@ -1,5 +1,6 @@
 Feature: Test the admin area login
 
+  @chrome
   Scenario: A user logs in ok
     Given I go to the login page
     When I enter 'Rob' in user name

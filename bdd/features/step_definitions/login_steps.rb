@@ -1,19 +1,19 @@
 Given /^I go to the login page$/ do
-    visit_page LogInPage
+    visit '/'
 end
 
 When /^I enter '(.*)' in user name$/ do |user|
-  @current_page.user_name = user
+  fill_in('login', with: user)
 end
 
 When /^I enter '(.*)' in password$/ do |password|
-  @current_page.user_password = password
+  fill_in('password', with: password)
 end
 
 When /^I login$/ do
-  @current_page.login
+  click_button('login')
 end
+
 Then /^I should see the summary heading$/ do
-  on_page 'SummaryPage'
-  @current_page.heading.should == 'Team Summary'
+  expect(page.title).to eq 'Team Summary'
 end

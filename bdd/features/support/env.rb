@@ -1,25 +1,64 @@
 require 'rspec/expectations'
-require 'watir-webdriver'
+require 'sinatra/activerecord'
+require 'capybara/cucumber'
+require 'capybara/poltergeist'
 require 'selenium-webdriver'
-require 'page-object'
-require 'page-object/page_factory'
 require 'cgi'
+require 'rspec'
 
 
-World PageObject::PageFactory
+
+# World PageObject::PageFactory
 
 
-ENV['BROWSER'].nil? ? BROWSER_NAME = :firefox : BROWSER_NAME = ENV['BROWSER'].to_sym
+# ENV['BROWSER'].nil? ? BROWSER_NAME = :firefox : BROWSER_NAME = ENV['BROWSER'].to_sym
+#
+# #browser = Watir::Browser.new(BROWSER_NAME, :profile=>"default")
+# browser = Watir::Browser.new(:firefox)
+#
+# Before do
+#   @browser = browser
+# end
+#
+# at_exit do
+#   #browser.close
+# end
 
-#browser = Watir::Browser.new(BROWSER_NAME, :profile=>"default")
-browser = Watir::Browser.new(:firefox)
 
-Before do
-  @browser = browser
+LOCAL_URL = 'http://localhost:4569'
+
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, {js_errors: false, timeout: 50, phantomjs_options: ['--load-images=no', '--ignore-ssl-errors=yes','--ssl-protocol=any']})
 end
 
-at_exit do
-  #browser.close
+Capybara.javascript_driver = :poltergeist
+Capybara.app_host = "#{LOCAL_URL}"
+Capybara.run_server = false
+Capybara.default_wait_time = 5
+
+Capybara.register_driver :chrome do |app|
+  options = {}
+  options[:browser] = :chrome
+  Capybara::Selenium::Driver.new(app, options)
 end
+
+Capybara.default_driver = :poltergeist
+
+
+Capybara.app = '/'
+# ActiveRecord::Base.establish_connection(
+#     adapter: 'mysql2',
+#     database: 'mysky-registration',
+#     host: 'localhost',
+#     port: 3306,
+#     username: 'root',
+#     password: 'password'
+# )
+#
+# commands = IO.read("#{LIB_PATH}/db/db_schema.sql").split(';')
+# commands.each do |command|
+#   ActiveRecord::Base.connection.execute("#{command};")
+# end
+# ActiveRecord::Base.logger.level = Logger::WARN
 
 

@@ -1,5 +1,5 @@
-class SummaryPage
-  include PageObject
-
-  h1(:heading, :id => 'summary')
-end
+# class SummaryPage
+#   include PageObject
+#
+#   h1(:heading, :id => 'summary')
+# end

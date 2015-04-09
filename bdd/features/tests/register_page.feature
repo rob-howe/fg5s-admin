@@ -2,7 +2,7 @@ Feature: Test the register team page
 
   Scenario: I can submit valid data
     Given I go to the register page
-    Then I should see the top heading with 'Register Your Team for the FG5's 2013'
+    Then I should see the top heading with 'Register Your Team for the FG5's 2015'
     And I select age group 'U8'
     And I enter 'Test FC' in club name
     And I enter 'Storm' in designation
@@ -15,11 +15,10 @@ Feature: Test the register team page
     And I enter 'Address line 1' in address line 1
     And I enter 'Address line 2' in address line 2
     And I enter 'Enfield' in town
-    And I enter 'Enfield' in town
     And I enter 'Middlesex' in county
     And I enter 'EN7 8UU' in postcode
     And I submit my team
-    Then I should see the confirmation heading with 'Thank You for Your Application to the FG5's 2013'
+    Then I should see the confirmation heading with 'Thank You for Your Application to the FG5's 2015'
     And I should see age group 'U8'
     And I should see club name 'Test FC Storm'
     And I should see league 'My Team League Name'
