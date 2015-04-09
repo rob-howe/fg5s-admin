@@ -21,7 +21,7 @@ class FivesController < Sinatra::Base
   end
 
   post '/add_another' do
-    @age_groups = AgeGroup.find(:all)
+    @age_groups = AgeGroup.where(:open => true)
     if params[:id]
       fives_team = FivesTeam.find(params[:id].to_i)
       @fives_team = fives_team unless fives_team.nil?

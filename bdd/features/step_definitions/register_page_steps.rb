@@ -78,3 +78,13 @@ end
 Then /^I the error messages should contain '(.*)'$/ do |message|
   expect(page.find('#errors')).to have_content message
 end
+
+
+Then(/^I should see a message saying the (.*) (team is|teams are) closed$/) do |teams, plural|
+  expect(page.find('#closed_age_groups')).to have_content teams
+end
+
+And(/^the age group drop down should not contain the (.*) option$/) do |team|
+  select_options = page.find('#age_group').all('option').collect{|option|(option.text)}
+  expect(select_options.include?(team)).to be false
+end

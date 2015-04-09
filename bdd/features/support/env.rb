@@ -1,3 +1,8 @@
+LIB_PATH = File.expand_path(File.dirname(__FILE__) + '/../../../lib')
+
+$LOAD_PATH.unshift LIB_PATH unless $LOAD_PATH.include?(LIB_PATH)
+$LOAD_PATH.unshift "#{__dir__}/../"
+
 require 'rspec/expectations'
 require 'sinatra/activerecord'
 require 'capybara/cucumber'
@@ -46,14 +51,14 @@ Capybara.default_driver = :poltergeist
 
 
 Capybara.app = '/'
-# ActiveRecord::Base.establish_connection(
-#     adapter: 'mysql2',
-#     database: 'mysky-registration',
-#     host: 'localhost',
-#     port: 3306,
-#     username: 'root',
-#     password: 'password'
-# )
+ActiveRecord::Base.establish_connection(
+    adapter: 'mysql2',
+    database: 'forest_glade',
+    host: 'localhost',
+    port: 3306,
+    username: 'root',
+    password: 'password'
+)
 #
 # commands = IO.read("#{LIB_PATH}/db/db_schema.sql").split(';')
 # commands.each do |command|
@@ -61,4 +66,4 @@ Capybara.app = '/'
 # end
 # ActiveRecord::Base.logger.level = Logger::WARN
 
-
+Dir["#{LIB_PATH}/model/*.rb"].each{|file| require file}
