@@ -11,25 +11,6 @@ require 'selenium-webdriver'
 require 'cgi'
 require 'rspec'
 
-
-
-# World PageObject::PageFactory
-
-
-# ENV['BROWSER'].nil? ? BROWSER_NAME = :firefox : BROWSER_NAME = ENV['BROWSER'].to_sym
-#
-# #browser = Watir::Browser.new(BROWSER_NAME, :profile=>"default")
-# browser = Watir::Browser.new(:firefox)
-#
-# Before do
-#   @browser = browser
-# end
-#
-# at_exit do
-#   #browser.close
-# end
-
-
 LOCAL_URL = 'http://localhost:4569'
 
 Capybara.register_driver :poltergeist do |app|
@@ -51,6 +32,7 @@ Capybara.default_driver = :poltergeist
 
 
 Capybara.app = '/'
+
 ActiveRecord::Base.establish_connection(
     adapter: 'mysql2',
     database: 'forest_glade',
