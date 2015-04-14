@@ -15,5 +15,5 @@ When /^I login$/ do
 end
 
 Then /^I should see the summary heading$/ do
-  expect(page.title).to eq 'Team Summary'
+  expect(page.find('#summary').text).to eq 'Team Summary'
 end

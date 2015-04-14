@@ -31,7 +31,7 @@ class FivesController < Sinatra::Base
   end
 
   get '/admin/summary' do
-    @summary = Summary.find(:all)
+    @summary = Summary.select(:id, :age_group, :total, :paid, :unpaid)
     erb :'admin/summary'
   end
 
