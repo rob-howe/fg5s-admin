@@ -5,6 +5,7 @@ require 'model/user'
 require 'model/summary'
 require 'tilt'
 require 'pony'
+
 class SendMailError < StandardError
 end
 
@@ -49,7 +50,8 @@ class FivesController < Sinatra::Base
           :date_registered => Time.now
       )
       @age_group = AgeGroup.find(params[:age_group_id].to_i)
-      send_confirmation_mail(@fives_team, @age_group) unless ENV['DATABASE_URL'] == 'localhost'
+      send_confirmation_mail(@fives_team, @age_group)
+      # send_confirmation_mail(@fives_team, @age_group) unless ENV['DATABASE_URL'] == 'localhost'
       erb :registered, :layout => false
     rescue SendMailError => ex
       puts "error registering new team problem sending mail #{ex.message}"
@@ -65,7 +67,7 @@ class FivesController < Sinatra::Base
   helpers do
     def discount_applicable
       #todo make work
-      true
+      false
     end
 
     def has_errors
