@@ -15,6 +15,7 @@ gem 'em-http-request'
 # async calls with thin
 gem 'thin'
 gem 'rack-ssl-enforcer'
+gem 'pony'
 
 group :development do
   gem 'cucumber'
