@@ -1,4 +1,3 @@
-require 'active_record'
 class AgeGroup < ActiveRecord::Base
   #attr_accessor :description , :day
 

@@ -1,8 +1,8 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib') unless $LOAD_PATH.include?(File.dirname(__FILE__) + '/lib')
-require "fives_controller"
 
 require 'active_record'
 require 'mysql2'
+require "fives_controller"
 
 puts "ENV['DATABASE_URL']=#{ENV['DATABASE_URL']}"
 
