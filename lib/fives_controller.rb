@@ -5,6 +5,7 @@ require 'model/user'
 require 'model/summary'
 require 'tilt'
 require 'pony'
+
 class SendMailError < StandardError
 end
 
