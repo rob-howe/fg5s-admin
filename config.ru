@@ -2,8 +2,8 @@ __dir__ = File.dirname(__FILE__)
 $LOAD_PATH.unshift("#{__dir__}")
 $LOAD_PATH.unshift("#{__dir__}/lib")
 
-require 'active_record'
 require 'mysql2'
+require 'active_record'
 require "fives_controller"
 
 puts "ENV['DATABASE_URL']=#{ENV['DATABASE_URL']}"
