@@ -4,7 +4,7 @@ $LOAD_PATH.unshift("#{__dir__}/lib")
 
 require 'mysql2'
 require 'active_record'
-require "fives_controller"
+
 
 puts "ENV['DATABASE_URL']=#{ENV['DATABASE_URL']}"
 
@@ -36,6 +36,7 @@ $season = "#{season_year}/#{season_year + 1}"
 $closing_date = 'Friday 1st May 2015'
 $discount_end_date = 'Friday 4th May 2012'
 
+require "fives_controller"
 run FivesController
 
 #   heroku_d700529ea100691
