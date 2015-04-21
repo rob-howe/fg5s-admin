@@ -8,6 +8,7 @@ gem 'uagent'
 gem 'activerecord'
 gem 'activemodel'
 gem 'mysql2'
+gem 'activerecord-mysql-adapter'
 # async calls with thin
 gem 'rack-fiber_pool'
 gem 'em-synchrony'
