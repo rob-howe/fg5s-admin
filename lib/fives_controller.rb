@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'active_record'
 require 'model/age_group'
 require 'model/fives_team'
 require 'model/user'

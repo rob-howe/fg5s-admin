@@ -1,4 +1,6 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib') unless $LOAD_PATH.include?(File.dirname(__FILE__) + '/lib')
+__dir__ = File.dirname(__FILE__)
+$LOAD_PATH.unshift("#{__dir__}")
+$LOAD_PATH.unshift("#{__dir__}/lib")
 
 require 'active_record'
 require 'mysql2'
