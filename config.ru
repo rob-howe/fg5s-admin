@@ -15,14 +15,24 @@ ENV['SCHEMA'] = 'forest_glade' if ENV['SCHEMA'].nil?
 #ENV['SCHEMA'] = 'fgfc_in_memory' if ENV['SCHEMA'].nil?
 puts "ENV['DATABASE_URL']=#{ENV['DATABASE_URL']}"
 
-ActiveRecord::Base.establish_connection(
+ActiveRecord::Base.establish_connection({
 :adapter => "mysql2",
 :host => ENV['DATABASE_URL'],
 :username => ENV['USER_NAME'],
 :password => ENV['PASSWORD'],
 :database => ENV['SCHEMA'],
 :reconnect => true
-)
+})
+
+
+
+# ActiveRecord::Base.establish_connection({
+# :adapter => "mysql2",
+# :host => 'us-cdbr-east-02.cleardb.com',
+# :username => 'bd0887a8404bd6',
+# :password => 'c0ec2ec7',
+# :database => 'heroku_d700529ea100691',
+# :reconnect => true})
 
 #$age_groups = AgeGroup.find(:all)
 #$user = User.find(:all)

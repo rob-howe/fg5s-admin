@@ -1,6 +1,6 @@
 require 'sinatra/base'
-require 'sinatra/activerecord'
-require 'active_record'
+# require 'sinatra/activerecord'
+# require 'active_record'
 require 'model/age_group'
 require 'model/fives_team'
 require 'model/user'
@@ -52,8 +52,8 @@ class FivesController < Sinatra::Base
           :date_registered => Time.now
       )
       @age_group = AgeGroup.find(params[:age_group_id].to_i)
-      send_confirmation_mail(@fives_team, @age_group)
-      # send_confirmation_mail(@fives_team, @age_group) unless ENV['DATABASE_URL'] == 'localhost'
+      # send_confirmation_mail(@fives_team, @age_group)
+      send_confirmation_mail(@fives_team, @age_group) unless ENV['DATABASE_URL'] == 'localhost'
       erb :registered, :layout => false
     rescue SendMailError => ex
       puts "error registering new team problem sending mail #{ex.message}"

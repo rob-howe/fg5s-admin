@@ -18,7 +18,7 @@ class FivesController < Sinatra::Base
   end
 
   post '/authenticate' do
-    user = User.where(login: params[:login], password: params[:password])
+    user = User.find_by_login_and_password(params[:login], params[:password])
     if user
       session[:user] = user
       session[:user_name] = user.name
@@ -31,25 +31,25 @@ class FivesController < Sinatra::Base
   end
 
   get '/admin/summary' do
-    @summary = Summary.select(:id, :age_group, :total, :paid, :unpaid)
+    @summary = Summary.find(:all)
     erb :'admin/summary'
   end
 
   get '/admin/age_group' do
-    @fives_teams = FivesTeam.where(age_group_id: params[:age_group_id].to_i) unless params[:age_group_id].nil?
+    @fives_teams = FivesTeam.find_all_by_age_group_id(params[:age_group_id]) unless params[:age_group_id].nil?
     @age_group = AgeGroup.find(params[:age_group_id].to_i)
     erb :'admin/age_group_list'
   end
 
   get '/admin/excel' do
-    @fives_teams = FivesTeam.order(:age_group_id)
+    @fives_teams = FivesTeam.find(:all, :order => "age_group_id")
     content_type 'application/vnd.ms-excel'
     erb :excel, :layout => false
   end
 
   post '/admin/edit' do
     @fives_team = FivesTeam.find(params[:id].to_i)
-    @age_groups = AgeGroup.all
+    @age_groups = AgeGroup.find(:all)
     erb :'admin/edit_team'
   end
 
@@ -91,7 +91,7 @@ class FivesController < Sinatra::Base
   end
 
   post '/admin/add_team' do
-    @age_groups = AgeGroup.all
+    @age_groups = AgeGroup.find(:all)
     erb :'admin/add_team'
   end
 
