@@ -1,7 +1,13 @@
 Feature: Update an existing team
 
+  Background: I login
+    Given I go to the login page
+    When I enter 'Rob' in user name
+    And I enter 'rh20!!' in password
+    And I login
+
+
   Scenario: Modify paid status
-    Given I am logged in
     And an U7 team has been entered
     When click edit U7 team
     And click paid

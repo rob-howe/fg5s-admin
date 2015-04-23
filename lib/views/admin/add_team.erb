@@ -46,7 +46,7 @@
             <label for="teamDesignation">Designation</label>
           </td>
           <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'teamDesignation', 'errors')}">
-            <input type="text" name="team_designation" value="<%=@fives_team.team_designation if @fives_team %>" tabindex="3"/>
+            <input type="text" id="designation" name="team_designation" value="<%=@fives_team.team_designation if @fives_team %>" tabindex="3"/>
             <span class="tooltip" title="Used to identify several teams from one club in the same age group, examples are 'Lions', 'Tigers', 'A', 'Red', 'Blue', 'Volcanos'...etc, it can however be anything you like."></span>
           </td>
         </tr>
@@ -119,7 +119,7 @@
             <label for="addressTown"></label>
           </td>
           <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'addressTown', 'errors')}">
-            <input type="text" name="address_town" value="<%=@fives_team.address_town if @fives_team %>" tabindex="10"/>
+            <input type="text" id="town" name="address_town" value="<%=@fives_team.address_town if @fives_team %>" tabindex="10"/>
           </td>
         </tr>
 
@@ -134,7 +134,7 @@
             <label for="addressCounty"></label>
           </td>
           <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'addressCounty', 'errors')}">
-            <input type="text" name="address_county" value="<%=@fives_team.address_county if @fives_team %>" tabindex="11"/>
+            <input type="text" id="county" name="address_county" value="<%=@fives_team.address_county if @fives_team %>" tabindex="11"/>
           </td>
         </tr>
 
@@ -145,7 +145,7 @@
             <label for="addressPostcode">Postcode</label>
           </td>
           <td valign="top" class="value ${hasErrors(bean: fivesTeamInstance, field: 'addressPostcode', 'errors')}">
-            <input type="text" name="address_postcode" value="<%=@fives_team.address_postcode if @fives_team %>" size="9" tabindex="12"/>
+            <input type="text" id="postcode" name="address_postcode" value="<%=@fives_team.address_postcode if @fives_team %>" size="9" tabindex="12"/>
           </td>
         </tr>
       </tbody>

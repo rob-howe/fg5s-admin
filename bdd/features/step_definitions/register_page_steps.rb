@@ -59,7 +59,7 @@ When /^I should see club name '(.*)'$/ do |club_name|
   expect(page.find('#registered_club_name').text).to eq club_name
 end
 When /^I should see league '(.*)'$/ do |league|
-  expect(page.find('#registered_league').text).to eq league
+  expect(page.find('#registered_league_name').text).to eq league
 end
 When /^I should see division '(.*)'$/ do |division|
   expect(page.find('#registered_division').text).to eq division

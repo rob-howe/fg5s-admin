@@ -1,7 +1,7 @@
 LIB_PATH = File.expand_path(File.dirname(__FILE__) + '/../../../lib')
 
 $LOAD_PATH.unshift LIB_PATH unless $LOAD_PATH.include?(LIB_PATH)
-$LOAD_PATH.unshift "#{__dir__}/../"
+#$LOAD_PATH.unshift "#{__dir__}/../"
 
 require 'rspec/expectations'
 require 'sinatra/activerecord'
