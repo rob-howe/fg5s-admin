@@ -67,6 +67,19 @@ class FivesController < Sinatra::Base
   end
 
   helpers do
+    def fives_year
+      year = Date.today.year
+      fives_year = (Date.today.month > 8 ? year + 1 : year)
+      fives_year
+    end
+
+    def season
+      year = Date.today.year
+      season_year =  Date.today.month < 8 ? year - 1 : year
+      "#{season_year}/#{season_year + 1}"
+    end
+
+
     def discount_applicable
       #todo make work
       false
@@ -78,7 +91,7 @@ class FivesController < Sinatra::Base
 
     def applications_closed
       $closing_date
-      true
+      false
     end
 
     def applications_closing

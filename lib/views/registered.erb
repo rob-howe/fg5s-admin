@@ -8,7 +8,7 @@
 </script>
 
 <div id="register_wrapper">
-    <h1 id="confirmation_heading">Thank You for Your Application to the FG5's <%= $fives_year %></h1>
+    <h1 id="confirmation_heading">Thank You for Your Application to the FG5's <%= fives_year %></h1>
 
     <div class="message">You have submitted the following details.</div>
     <div class="dialog">
@@ -26,7 +26,7 @@
             </tr>
             <tr>
                 <td valign="top" class="name"><strong>League</strong></td>
-                <td id="registered_league" valign="top"><%= @fives_team.league_name %>
+                <td id="registered_league_name" valign="top"><%= @fives_team.league_name %>
                 </td>
             </tr>
             <tr>
@@ -104,12 +104,12 @@
     <p>The entry fee is &pound;40 per team.</p>
     <% if discount_applicable %>
         <p>As there is a <strong>&pound;5</strong> discount for teams registered before the 31st March
-            <%= $fives_year %> your entry fee is <strong>&pound;35.00</strong> provided payment
+            <%= fives_year %> your entry fee is <strong>&pound;35.00</strong> provided payment
             reaches us before 31st March.</p>
         <br/>
     <% end %>
     <div>
-        <p>If you would like to pay by bank transfer then please send with reference <strong><%=$fives_year%>-<%=@fives_team.ref_id%></strong> to:</p>
+        <p>If you would like to pay by bank transfer then please send with reference <strong><%=fives_year%>-<%=@fives_team.ref_id%></strong> to:</p>
         <table style="margin-left: 20px;width:90%">
             <tbody>
             <tr class="prop">

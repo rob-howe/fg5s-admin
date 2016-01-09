@@ -37,14 +37,14 @@ ActiveRecord::Base.establish_connection({
 #$age_groups = AgeGroup.find(:all)
 #$user = User.find(:all)
 year = Date.today.year
-$saturday_date = 'Saturday 23rd May'
-$sunday_date = 'Sunday 24th May'
-$fives_year =  Date.today.month > 8 ? year + 1 : year
+$saturday_date = 'Saturday 28th May'
+$sunday_date = 'Sunday 29th May'
+# $fives_year =  Date.today.month > 8 ? year + 1 : year
 season_year =  Date.today.month < 8 ? year - 1 : year
 $season = "#{season_year}/#{season_year + 1}"
 
-$closing_date = 'Friday 1st May 2015'
-$discount_end_date = 'Friday 4th May 2012'
+$closing_date = 'Friday 6th May 2015'
+$discount_end_date = 'Friday 6th May 2016'
 
 require "fives_controller"
 run FivesController
