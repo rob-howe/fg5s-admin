@@ -99,7 +99,7 @@ class FivesController < Sinatra::Base
     end
 
     def any_age_groups_closed?
-      AgeGroup.where(:open => false)
+      AgeGroup.where(:open => false).size > 0
     end
 
     def age_groups_closed
