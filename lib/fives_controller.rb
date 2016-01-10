@@ -125,6 +125,9 @@ class FivesController < Sinatra::Base
                 :enable_starttls_auto => truek
             })
       rescue => ex
+        puts '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+        puts ex.message
+        puts '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
         raise SendMailError.new (ex.message)
       end
     end
