@@ -157,18 +157,18 @@ class FivesController < Sinatra::Base
       #mailing_list = MailingTarget.find_all_by_opted_out(false)
       mailing_list = MailingTarget.where("opted_out = false")
       puts 'about to loop'
-      # mailing_list.each do |target|
+      mailing_list.each do |target|
         begin
-          # mail_text = template.render(nil, {email_address: target.email_address, year: fives_year, season: season})
-          mail_text = template.render(nil, {email_address: 'robert.howe@gmail.com', year: fives_year, season: season})
-          # send_mail(mail_text, "The Forest Glade Fives - #{$year} #{$saturday_date} & #{$sunday_date} May", target.email_address)
-          send_mail(mail_text, "The Forest Glade Fives - #{$year} #{$saturday_date} & #{$sunday_date} May", 'robert.howe@gmail.com')
+          mail_text = template.render(nil, {email_address: target.email_address, year: fives_year, season: season})
+          # mail_text = template.render(nil, {email_address: 'robert.howe@gmail.com', year: fives_year, season: season})
+          send_mail(mail_text, "The Forest Glade Fives - #{$year} #{$saturday_date} & #{$sunday_date} May", target.email_address)
+          # send_mail(mail_text, "The Forest Glade Fives - #{$year} #{$saturday_date} & #{$sunday_date} May", 'robert.howe@gmail.com')
         rescue => ex
-          # @emails_sent_error << "Id: #{target.id} :: email: #{target.email_address} :: error: #{ex}"
-          @emails_sent_error << "Id:  :: email:  :: error: #{ex.message}"
+          @emails_sent_error << "Id: #{target.id} :: email: #{target.email_address} :: error: #{ex}"
+          # @emails_sent_error << "Id:  :: email:  :: error: #{ex.message}"
           raise ex
         end
-      # end
+      end
       @emails_sent = true
     rescue => ex
       puts '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
