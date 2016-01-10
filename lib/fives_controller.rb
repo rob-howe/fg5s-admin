@@ -82,7 +82,7 @@ class FivesController < Sinatra::Base
 
     def discount_applicable
       #todo make work
-      false
+      true
     end
 
     def has_errors
@@ -108,7 +108,7 @@ class FivesController < Sinatra::Base
 
     def send_confirmation_mail fives_team, age_group
       begin
-        mail_text = @@confirmation_template.render(nil, {:fives_team => fives_team, :age_group => age_group, :discount_applicable => discount_applicable})
+        mail_text = @@confirmation_template.render(nil, {:fives_year => fives_year, :fives_team => fives_team, :age_group => age_group, :discount_applicable => discount_applicable})
         Pony.mail(
             :from => 'forest glade fives' + "<fg5s@forestgladefc.co.uk>",
             :to => fives_team.email_address,
