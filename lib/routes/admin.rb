@@ -122,29 +122,90 @@ class FivesController < Sinatra::Base
   end
 
   post '/admin/upload' do
-    unless params[:file] &&  (tmpfile = params[:file][:tempfile]) && (name = params[:file][:filename])
-        @error = "No file selected"
-        erb :'admin/upload'
-      end
+    unless params[:file] && (tmpfile = params[:file][:tempfile]) && (name = params[:file][:filename])
+      @error = "No file selected"
+      erb :'admin/upload'
+    end
     @duplicate_emails = []
     @invalid_format_emails = []
     emails_line = params[:file][:tempfile].read
     emails = emails_line.split(/\n/)
     emails.uniq.each do |email|
-        if email =~ /^([a-zA-Z0-9_\-\.]+)@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/
-          begin
-            MailingTarget.create(:email_address => email, :opted_out => false)
-            puts "good email #{email}"
-          rescue ActiveRecord::RecordNotUnique => ex
-            @duplicate_emails << email
-          end
-
-        else
-          @invalid_format_emails << email
+      if email =~ /^([a-zA-Z0-9_\-\.]+)@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/
+        begin
+          MailingTarget.create(:email_address => email, :opted_out => false)
+          puts "good email #{email}"
+        rescue ActiveRecord::RecordNotUnique => ex
+          @duplicate_emails << email
         end
+
+      else
+        @invalid_format_emails << email
+      end
     end
 
     erb :'admin/upload'
 
   end
+
+  post '/admin/flyer' do
+    @emails_sent_error = []
+    @emails_sent = false
+    begin
+      template = Tilt.new("#{File.dirname(__FILE__)}/../email_templates/flyer.erb")
+
+      #mailing_list = MailingTarget.find_all_by_opted_out(false)
+      mailing_list = MailingTarget.where("opted_out = false")
+      puts 'about to loop'
+      # mailing_list.each do |target|
+        begin
+          # mail_text = template.render(nil, {email_address: target.email_address, year: fives_year, season: season})
+          mail_text = template.render(nil, {email_address: 'robert.howe@gmail.com', year: fives_year, season: season})
+          # send_mail(mail_text, "The Forest Glade Fives - #{$year} #{$saturday_date} & #{$sunday_date} May", target.email_address)
+          send_mail(mail_text, "The Forest Glade Fives - #{$year} #{$saturday_date} & #{$sunday_date} May", 'robert.howe@gmail.com')
+        rescue => ex
+          # @emails_sent_error << "Id: #{target.id} :: email: #{target.email_address} :: error: #{ex}"
+          @emails_sent_error << "Id:  :: email:  :: error: #{ex.message}"
+          raise ex
+        end
+      # end
+      @emails_sent = true
+    rescue => ex
+      puts '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+      puts ex.message
+      puts '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+    end
+
+    erb :'admin/upload'
+  end
+
+  helpers do
+
+    def send_mail(mail_text, subject, to_email_address)
+      begin
+        Pony.mail(
+            :from => 'forest glade fives<fg5s@forestgladefc.co.uk>',
+            :to => to_email_address,
+            :subject => subject,
+            :html_body => mail_text,
+            :via => :smtp,
+            :via_options => {
+                :address => 'smtp.sendgrid.net',
+                :port => '587',
+                :domain => 'heroku.com',
+                :user_name => ENV['SENDGRID_USERNAME'],
+                :password => ENV['SENDGRID_PASSWORD'],
+                :authentication => :plain,
+                :enable_starttls_auto => true
+            })
+      rescue => ex
+        puts '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+        puts ex.message
+        puts '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+        raise SendMailError.new (ex.message)
+      end
+    end
+
+  end
+
 end

@@ -135,6 +135,5 @@ class FivesController < Sinatra::Base
   end
 
   require_relative 'routes/admin'
-  require_relative 'routes/fgfc_admin'
   require_relative 'routes/error'
 end
