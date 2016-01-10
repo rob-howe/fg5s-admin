@@ -110,13 +110,13 @@ class FivesController < Sinatra::Base
       begin
         mail_text = @@confirmation_template.render(nil, {:fives_year => fives_year, :fives_team => fives_team, :age_group => age_group, :discount_applicable => discount_applicable})
         Pony.mail(
-            :from => 'forest glade fives' + "<fg5s@forestgladefc.co.uk>",
+            :from => "forest glade fives<fg5s@forestgladefc.co.uk>",
             :to => fives_team.email_address,
             :subject => "The Forest Glade Fives - Application Confirmation - Your Reference: " + fives_team.ref_id,
             :html_body => mail_text,
             :via => :smtp,
             :via_options => {
-                :address => 'smtp.sendgrid.net',
+                :address => 'smtp.sendgrid.net',k
                 :port => '587',
                 :domain => 'heroku.com',
                 :user_name => ENV['SENDGRID_USERNAME'],
