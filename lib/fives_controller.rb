@@ -116,13 +116,13 @@ class FivesController < Sinatra::Base
             :html_body => mail_text,
             :via => :smtp,
             :via_options => {
-                :address => 'smtp.gmail.com',
+                :address => 'smtp.sendgrid.net',
                 :port => '587',
-                :enable_starttls_auto => true,
-                :user_name => 'fg5s@forestgladefc.co.uk',
-                :password => 'f0restg!ade5s',
+                :domain => 'heroku.com',
+                :user_name => ENV['SENDGRID_USERNAME'],
+                :password => ENV['SENDGRID_PASSWORD'],
                 :authentication => :plain,
-                :domain => 'localhost.localdomain'
+                :enable_starttls_auto => truek
             })
       rescue => ex
         raise SendMailError.new (ex.message)
