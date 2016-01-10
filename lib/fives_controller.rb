@@ -122,7 +122,7 @@ class FivesController < Sinatra::Base
                 :user_name => ENV['SENDGRID_USERNAME'],
                 :password => ENV['SENDGRID_PASSWORD'],
                 :authentication => :plain,
-                :enable_starttls_auto => truek
+                :enable_starttls_auto => true
             })
       rescue => ex
         puts '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
