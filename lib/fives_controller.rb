@@ -90,7 +90,7 @@ class FivesController < Sinatra::Base
     end
 
     def applications_closed
-      false
+      true
     end
 
     def applications_closing
