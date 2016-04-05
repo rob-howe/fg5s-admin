@@ -82,7 +82,7 @@ class FivesController < Sinatra::Base
 
     def discount_applicable
       #todo make work
-      true
+      false
     end
 
     def has_errors
