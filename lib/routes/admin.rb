@@ -31,25 +31,25 @@ class FivesController < Sinatra::Base
   end
 
   get '/admin/summary' do
-    @summary = Summary.find(:all)
+    @summary = Summary.all
     erb :'admin/summary'
   end
 
   get '/admin/age_group' do
-    @fives_teams = FivesTeam.find_all_by_age_group_id(params[:age_group_id]) unless params[:age_group_id].nil?
+    @fives_teams = FivesTeam.where(age_group_id: params[:age_group_id]) unless params[:age_group_id].nil?
     @age_group = AgeGroup.find(params[:age_group_id].to_i)
     erb :'admin/age_group_list'
   end
 
   get '/admin/excel' do
-    @fives_teams = FivesTeam.find(:all, :order => "age_group_id")
+    @fives_teams = FivesTeam.all.order("age_group_id")
     content_type 'application/vnd.ms-excel'
     erb :excel, :layout => false
   end
 
   post '/admin/edit' do
     @fives_team = FivesTeam.find(params[:id].to_i)
-    @age_groups = AgeGroup.find(:all)
+    @age_groups = AgeGroup.all
     erb :'admin/edit_team'
   end
 
@@ -91,7 +91,7 @@ class FivesController < Sinatra::Base
   end
 
   post '/admin/add_team' do
-    @age_groups = AgeGroup.find(:all)
+    @age_groups = AgeGroup.all
     erb :'admin/add_team'
   end
 

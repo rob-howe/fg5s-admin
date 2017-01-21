@@ -10,7 +10,7 @@ puts "ENV['DATABASE_URL']=#{ENV['DATABASE_URL']}"
 
 ENV['DATABASE_URL'] = 'localhost' if ENV['DATABASE_URL'].nil?
 ENV['USER_NAME'] = 'root' if ENV['USER_NAME'].nil?
-ENV['PASSWORD'] = 'password' if ENV['PASSWORD'].nil?
+ENV['PASSWORD'] = '' if ENV['PASSWORD'].nil?
 ENV['SCHEMA'] = 'forest_glade' if ENV['SCHEMA'].nil?
 #ENV['SCHEMA'] = 'fgfc_in_memory' if ENV['SCHEMA'].nil?
 puts "ENV['DATABASE_URL']=#{ENV['DATABASE_URL']}"
@@ -37,8 +37,8 @@ ActiveRecord::Base.establish_connection({
 #$age_groups = AgeGroup.find(:all)
 #$user = User.find(:all)
 year = Date.today.year
-$saturday_date = 'Saturday 28th May'
-$sunday_date = 'Sunday 29th May'
+$saturday_date = 'Saturday 27th May'
+$sunday_date = 'Sunday 28th May'
 # $fives_year =  Date.today.month > 8 ? year + 1 : year
 season_year =  Date.today.month < 8 ? year - 1 : year
 $season = "#{season_year}/#{season_year + 1}"

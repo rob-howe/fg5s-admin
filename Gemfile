@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.3.3'
 
 
 gem 'sinatra'
-gem 'activerecord', '3.2.9'
+gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'activesupport'
 gem 'uagent'
