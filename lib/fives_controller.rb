@@ -112,6 +112,7 @@ class FivesController < Sinatra::Base
         Pony.mail(
             :from => 'forest glade fives<fg5s@forestgladefc.co.uk>',
             :to => fives_team.email_address,
+            :bcc => 'fg5s@forestgladefc.co.uk',
             :subject => "The Forest Glade Fives - Application Confirmation - Your Reference: " + fives_team.ref_id,
             :html_body => mail_text,
             :via => :smtp,
