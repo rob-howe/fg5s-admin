@@ -82,8 +82,8 @@ class FivesController < Sinatra::Base
 
     def discount_applicable
       today = Date.today
-      firstOfApril = Date.new(fives_year, 4, 1)
-      today < firstOfApril
+      first_of_april = Date.new(fives_year, 4, 1)
+      today < first_of_april
     end
 
     def has_errors
