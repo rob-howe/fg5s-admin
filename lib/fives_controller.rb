@@ -79,7 +79,6 @@ class FivesController < Sinatra::Base
       "#{season_year}/#{season_year + 1}"
     end
 
-
     def discount_applicable
       today = Date.today
       first_of_april = Date.new(fives_year, 4, 1)
@@ -91,7 +90,7 @@ class FivesController < Sinatra::Base
     end
 
     def applications_closed
-      false
+      true
     end
 
     def applications_closing
